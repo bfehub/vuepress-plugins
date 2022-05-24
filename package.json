@@ -1,0 +1,45 @@
+{
+  "name": "root",
+  "private": true,
+  "description": "A theme for vuepress",
+  "scripts": {
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm",
+    "commit": "npx git-cz",
+    "clean": "pnpm --parallel --stream clean",
+    "dev:tsc": "pnpm build:tsc --watch",
+    "dev:copy": "pnpm build:copy --watch",
+    "build": "pnpm build:all && pnpm build:copy",
+    "build:all": "pnpm -r --stream build",
+    "build:copy": "pnpm --parallel --stream copy",
+    "build:tsc": "tsc -b tsconfig.build.json",
+    "docs:dev": "pnpm --filter=docs docs:dev",
+    "docs:clean": "pnpm --filter=docs docs:clean",
+    "docs:build": "pnpm --filter=docs docs:build",
+    "docs:serve": "pnpm --filter=docs docs:serve",
+    "docs:release": "pnpm build && pnpm docs:build"
+  },
+  "devDependencies": {
+    "@bfehub/eslint-config-vue": "^1.2.0",
+    "@bfehub/stylelint-config-basic": "^1.2.0",
+    "@changesets/cli": "^2.22.0",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "commitizen": "^4.2.4",
+    "cpx2": "^4.2.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.14.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "postcss": "^8.4.13",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "stylelint": "^14.8.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.8"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7"
+  }
+}
