@@ -1,0 +1,22 @@
+{
+  "name": "@bfehub/vuepress-components",
+  "version": "1.0.0",
+  "description": "VuePress components",
+  "keywords": [
+    "vuepress",
+    "components"
+  ],
+  "license": "MIT",
+  "author": "haiweilian",
+  "main": "index.ts",
+  "homepage": "https://github.com/bfehub/vmi",
+  "dependencies": {
+    "vue": "^3.2.33"
+  },
+  "devDependencies": {
+    "@bfehub/vuepress-components": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

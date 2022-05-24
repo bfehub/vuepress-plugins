@@ -42,17 +42,28 @@ importers:
 
   docs:
     specifiers:
+      '@bfehub/vuepress-components': workspace:*
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
       anywhere: ^1.5.0
       vue: ^3.2.33
       vuepress: 2.0.0-beta.45
     dependencies:
+      '@bfehub/vuepress-components': link:../packages/components
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
       anywhere: 1.6.0
       vue: 3.2.36
       vuepress: 2.0.0-beta.45_bdwekwkq6dldak7vw7siptpnxm
+
+  packages/components:
+    specifiers:
+      '@bfehub/vuepress-components': workspace:*
+      vue: ^3.2.33
+    dependencies:
+      vue: 3.2.36
+    devDependencies:
+      '@bfehub/vuepress-components': 'link:'
 
 packages:
 
