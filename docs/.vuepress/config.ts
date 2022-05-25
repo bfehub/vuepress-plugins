@@ -1,5 +1,6 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
+import { pageMapPlugin } from '@bfehub/vuepress-plugin-page-map'
 import { navbar, sidebar } from './configs'
 
 export default defineUserConfig({
@@ -36,4 +37,6 @@ export default defineUserConfig({
       },
     },
   }),
+
+  plugins: [pageMapPlugin()],
 })

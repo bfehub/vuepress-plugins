@@ -43,6 +43,7 @@ importers:
   docs:
     specifiers:
       '@bfehub/vuepress-components': workspace:*
+      '@bfehub/vuepress-plugin-page-map': workspace:*
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
       anywhere: ^1.5.0
@@ -50,6 +51,7 @@ importers:
       vuepress: 2.0.0-beta.45
     dependencies:
       '@bfehub/vuepress-components': link:../packages/components
+      '@bfehub/vuepress-plugin-page-map': link:../packages/plugin-page-map
       '@vuepress/client': 2.0.0-beta.45
       '@vuepress/theme-default': 2.0.0-beta.45
       anywhere: 1.6.0
@@ -64,6 +66,16 @@ importers:
       vue: 3.2.36
     devDependencies:
       '@bfehub/vuepress-components': 'link:'
+
+  packages/plugin-page-map:
+    specifiers:
+      '@vuepress/core': ^2.0.0-beta.45
+      '@vuepress/utils': ^2.0.0-beta.45
+      chokidar: ^3.5.3
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.45
+      '@vuepress/utils': 2.0.0-beta.45
+      chokidar: 3.5.3
 
 packages:
 

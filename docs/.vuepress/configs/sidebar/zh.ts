@@ -12,5 +12,9 @@ export const zh: SidebarConfig = {
       text: '介绍',
       children: ['/zh/components/README.md'],
     },
+    {
+      text: '组件',
+      children: ['/zh/components/npm-badge/index.md'],
+    },
   ],
 }

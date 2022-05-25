@@ -12,5 +12,9 @@ export const en: SidebarConfig = {
       text: 'Intro',
       children: ['/components/README.md'],
     },
+    {
+      text: 'Components',
+      children: ['/components/npm-badge/index.md'],
+    },
   ],
 }

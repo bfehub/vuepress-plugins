@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@bfehub/vuepress-components": "workspace:*",
+    "@bfehub/vuepress-plugin-page-map": "workspace:*",
     "@vuepress/client": "2.0.0-beta.45",
     "@vuepress/theme-default": "2.0.0-beta.45",
     "anywhere": "^1.5.0",
