@@ -52,13 +52,14 @@ export const createPage = async (
   })
 
   // override attribute
-  page.lang = lang
+  page.lang = app.siteData.locales?.[langPrefix]?.lang || app.siteData.lang
   page.pathLocale = pathLocale
   page.pathInferred = pathInferred
   page.filePathRelative = relativePath
 
   page.data.lang = page.lang
   ;(page.data as any).filePathRelative = page.filePathRelative
+  ;(page as any)._PageMapPluginOptions = options
 
   return page
 }
