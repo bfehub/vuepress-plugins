@@ -1,0 +1,69 @@
+@import '_variables';
+
+/**
+ * code-group
+ */
+.code-group__nav {
+  padding-top: 10px;
+  padding-bottom: calc(1.7rem - 6px);
+  padding-left: 10px;
+  margin-top: 0.85rem;
+  // 2 * margin + border-radius of <pre> tag
+  margin-bottom: calc(-1.7rem - 6px);
+  background-color: var(--code-bg-color);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.code-group__ul {
+  display: inline-flex;
+  padding-left: 0;
+  margin: auto 0;
+  list-style: none;
+}
+
+.code-group__nav-tab {
+  padding: 5px;
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgb(255 255 255 / 90%);
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+}
+
+.code-group__nav-tab:focus {
+  outline: none;
+}
+
+.code-group__nav-tab:focus-visible {
+  outline: 1px solid rgb(255 255 255 / 90%);
+}
+
+.code-group__nav-tab-active {
+  border-bottom: var(--c-brand) 1px solid;
+}
+
+@media (max-width: $MQMobileNarrow) {
+  .code-group__nav {
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+    border-radius: 0;
+  }
+}
+
+/**
+ * code-group-item
+ */
+.code-group-item {
+  display: none;
+}
+
+.code-group-item__active {
+  display: block;
+}
+
+.code-group-item > pre {
+  background-color: orange;
+}

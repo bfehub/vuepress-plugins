@@ -1,0 +1,260 @@
+@import '_variables';
+
+// ===============================
+// Forked and modified from prismjs/themes/prism-tomorrow.css
+
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: var(--font-family-code);
+  font-size: 1em;
+  hyphens: none;
+  line-height: 1.5;
+  color: #ccc;
+  text-align: left;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 4;
+  white-space: pre;
+  background: none;
+  word-spacing: normal;
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  white-space: normal;
+  border-radius: 0.3em;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #ec5975;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: #3eaf7c;
+}
+
+// ===============================
+
+.theme-default-content {
+  pre,
+  pre[class*='language-'] {
+    padding: 1.3rem 1.5rem;
+    margin: 0.85rem 0;
+    overflow: auto;
+    line-height: 1.4;
+    border-radius: 6px;
+
+    code {
+      padding: 0;
+      color: #fff;
+      overflow-wrap: unset;
+      background-color: transparent;
+      border-radius: 0;
+      -webkit-font-smoothing: auto;
+      -moz-osx-font-smoothing: auto;
+    }
+  }
+
+  .line-number {
+    font-family: var(--font-family-code);
+  }
+}
+
+div[class*='language-'] {
+  position: relative;
+  background-color: var(--code-bg-color);
+  border-radius: 6px;
+
+  &::before {
+    position: absolute;
+    top: 0.8em;
+    right: 1em;
+    z-index: 3;
+    font-size: 0.75rem;
+    color: var(--code-ln-color);
+  }
+
+  pre,
+  pre[class*='language-'] {
+    position: relative;
+    z-index: 1;
+    // force override the background color to be compatible with shiki
+    background: transparent !important;
+  }
+
+  .highlight-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 1.3rem;
+    line-height: 1.4;
+    user-select: none;
+
+    .highlight-line {
+      background-color: var(--code-hl-bg-color);
+    }
+  }
+
+  &:not(.line-numbers-mode) {
+    .line-numbers {
+      display: none;
+    }
+  }
+
+  &.line-numbers-mode {
+    .highlight-lines .highlight-line {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: block;
+        width: var(--code-ln-wrapper-width);
+        height: 100%;
+        content: ' ';
+      }
+    }
+
+    pre {
+      padding-left: 1rem;
+      margin-left: var(--code-ln-wrapper-width);
+      vertical-align: middle;
+    }
+
+    .line-numbers {
+      position: absolute;
+      top: 0;
+      width: var(--code-ln-wrapper-width);
+      padding-top: 1.25rem;
+      line-height: 1.4;
+      color: var(--code-ln-color);
+      text-align: center;
+      counter-reset: line-number;
+
+      .line-number {
+        position: relative;
+        z-index: 3;
+        height: 1.4em;
+        user-select: none;
+
+        &::before {
+          font-size: 0.85em;
+          content: counter(line-number);
+          counter-increment: line-number;
+        }
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: var(--code-ln-wrapper-width);
+      height: 100%;
+      content: '';
+      border-right: 1px solid var(--code-hl-bg-color);
+      border-radius: 6px 0 0 6px;
+    }
+  }
+}
+
+@each $lang in $codeLang {
+  div[class*='language-'].ext-#{$lang} {
+    &::before {
+      content: '' + $lang;
+    }
+  }
+}
+
+// narrow mobile
+@media (max-width: $MQMobileNarrow) {
+  .theme-default-content {
+    div[class*='language-'] {
+      margin: 0.85rem -1.5rem;
+      border-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import '_mixins';
+@import '_variables';
+
+.page {
+  display: block;
+  padding-bottom: 2rem;
+}
+
+.page-meta {
+  @include content_wrapper;
+
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow: auto;
+
+  .meta-item {
+    margin-top: 0.8rem;
+    cursor: default;
+
+    .meta-item-label {
+      font-weight: 500;
+      color: var(--c-text-lighter);
+    }
+
+    .meta-item-info {
+      font-weight: 400;
+      color: var(--c-text-quote);
+    }
+  }
+
+  .edit-link {
+    display: inline-block;
+    margin-right: 0.25rem;
+  }
+
+  .last-updated {
+    float: right;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .page-meta {
+    .last-updated {
+      float: none;
+      font-size: 0.8em;
+    }
+
+    .contributors {
+      font-size: 0.8em;
+    }
+  }
+}
+
+.page-nav {
+  @include content_wrapper;
+
+  padding-top: 1rem;
+  padding-bottom: 0;
+
+  .inner {
+    min-height: 2rem;
+    padding-top: 1rem;
+    margin-top: 0;
+    overflow: auto;
+    border-top: 1px solid var(--c-border);
+    transition: border-color var(--t-color);
+  }
+
+  .prev {
+    a::before {
+      content: '←';
+    }
+  }
+
+  .next {
+    float: right;
+
+    a::after {
+      content: '→';
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@bfehub/vuepress-theme-vmi",
+  "version": "1.0.0",
+  "description": "Vmi theme of VuePress",
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "keywords": [
+    "vuepress-theme",
+    "vuepress",
+    "theme",
+    "vmi"
+  ],
+  "license": "MIT",
+  "author": "haiweilian",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "homepage": "https://github.com/bfehub/vmi",
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo",
+    "copy": "cpx \"src/**/*.{d.ts,vue,scss}\" lib"
+  },
+  "dependencies": {
+    "@vuepress/client": "^2.0.0-beta.45",
+    "@vuepress/core": "^2.0.0-beta.45",
+    "@vuepress/plugin-active-header-links": "^2.0.0-beta.45",
+    "@vuepress/plugin-back-to-top": "^2.0.0-beta.45",
+    "@vuepress/plugin-container": "^2.0.0-beta.45",
+    "@vuepress/plugin-external-link-icon": "^2.0.0-beta.45",
+    "@vuepress/plugin-git": "^2.0.0-beta.45",
+    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.45",
+    "@vuepress/plugin-nprogress": "^2.0.0-beta.45",
+    "@vuepress/plugin-palette": "^2.0.0-beta.45",
+    "@vuepress/plugin-prismjs": "^2.0.0-beta.45",
+    "@vuepress/plugin-theme-data": "^2.0.0-beta.45",
+    "@vuepress/shared": "^2.0.0-beta.45",
+    "@vuepress/utils": "^2.0.0-beta.45",
+    "@vueuse/core": "^8.2.1",
+    "sass": "^1.51.0",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.14"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

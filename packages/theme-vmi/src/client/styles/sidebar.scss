@@ -1,0 +1,135 @@
+@import '_mixins';
+@import '_variables';
+
+.sidebar {
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .navbar-items {
+    display: none;
+    padding: 0.5rem 0 0.75rem;
+    border-bottom: 1px solid var(--c-border);
+    transition: border-color var(--t-color);
+
+    a {
+      font-weight: 600;
+    }
+
+    .navbar-item {
+      display: block;
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      font-size: 1.1em;
+      line-height: 1.25rem;
+    }
+  }
+
+  .sidebar-items {
+    padding: 1.5rem 0;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .sidebar {
+    .navbar-items {
+      display: block;
+
+      .navbar-dropdown-wrapper
+        .navbar-dropdown
+        .navbar-dropdown-item
+        a.router-link-active::after {
+        top: calc(1rem - 2px);
+      }
+    }
+
+    .sidebar-items {
+      padding: 1rem 0;
+    }
+  }
+}
+
+.sidebar-item {
+  color: var(--c-text);
+  cursor: default;
+  border-left: 0.25rem solid transparent;
+
+  &:focus-visible {
+    outline-width: 1px;
+    outline-offset: -1px;
+  }
+
+  &.active:not(p.sidebar-heading) {
+    font-weight: 600;
+    color: var(--c-text-accent);
+    border-left-color: var(--c-text-accent);
+  }
+
+  &.sidebar-heading {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.35rem 1.5rem 0.35rem 1.25rem;
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.15s ease;
+
+    &.collapsible {
+      cursor: pointer;
+
+      & + .sidebar-item-children {
+        @include dropdown_wrapper;
+
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    .arrow {
+      position: relative;
+      top: -0.12em;
+      left: 0.5em;
+    }
+  }
+
+  &:not(.sidebar-heading) {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 0.35rem 1rem 0.35rem 2rem;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.4;
+
+    & + .sidebar-item-children {
+      padding-left: 1rem;
+      font-size: 0.95em;
+    }
+
+    .sidebar-item-children .sidebar-item-children & {
+      padding: 0.25rem 1rem 0.25rem 1.75rem;
+
+      &.active {
+        font-weight: 500;
+        border-left-color: transparent;
+      }
+    }
+
+    a.sidebar-heading + .sidebar-item-children &.active {
+      border-left-color: transparent;
+    }
+  }
+}
+
+a.sidebar-item {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--c-text-accent);
+  }
+}
