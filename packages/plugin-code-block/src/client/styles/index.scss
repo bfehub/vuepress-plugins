@@ -1,0 +1,83 @@
+.vmi-previewer {
+  background-color: #fff;
+  border: 1px solid #ebedf1;
+  border-radius: 1px;
+}
+
+.vmi-previewer-example {
+  padding: 40px 24px;
+}
+
+.vmi-previewer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 5px;
+  border-top: 1px dashed #ebedf1;
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.5s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.vmi-previewer-sources {
+  border-top: 1px dashed #ebedf1;
+
+  pre[class*='language-'] {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  div[class*='language-'] {
+    border-radius: 0;
+  }
+}
+
+.vmi-previewer-tabs {
+  position: relative;
+  display: flex;
+
+  &-tab {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 36px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+
+    &:hover {
+      color: #4569d4;
+    }
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+
+  &-bar {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    pointer-events: none;
+    background: #4569d4;
+    transition: left 0.2s, width 0.2s;
+  }
+}
