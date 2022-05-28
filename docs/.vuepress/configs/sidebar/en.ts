@@ -1,4 +1,4 @@
-import type { SidebarConfig } from '@vuepress/theme-default'
+import type { SidebarConfig } from '@bfehub/vuepress-theme-vmi'
 
 export const en: SidebarConfig = {
   '/guide/': [
@@ -15,6 +15,10 @@ export const en: SidebarConfig = {
     {
       text: 'Components',
       children: ['/components/npm-badge/index.md'],
+    },
+    {
+      text: 'Element',
+      children: ['/components/element/button/index.md'],
     },
   ],
 }

@@ -1,7 +1,9 @@
 {
   "extends": "./tsconfig.base.json",
   "references": [
-    { "path": "./packages/plugin-page-map/tsconfig.build.json" }
+    { "path": "./packages/theme-vmi/tsconfig.build.json" },
+    { "path": "./packages/plugin-page-map/tsconfig.build.json" },
+    { "path": "./packages/plugin-code-block/tsconfig.build.json" }
   ],
   "files": []
 }

@@ -1,6 +1,7 @@
 import { defineUserConfig } from 'vuepress'
-import { defaultTheme } from '@vuepress/theme-default'
+import { defaultTheme } from '@bfehub/vuepress-theme-vmi'
 import { pageMapPlugin } from '@bfehub/vuepress-plugin-page-map'
+import { codeBlockPlugin } from '@bfehub/vuepress-plugin-code-block'
 import { navbar, sidebar } from './configs'
 
 export default defineUserConfig({
@@ -38,5 +39,11 @@ export default defineUserConfig({
     },
   }),
 
-  plugins: [pageMapPlugin()],
+  plugins: [
+    // @bfehub/vuepress-plugin-page-map
+    pageMapPlugin(),
+
+    // @bfehub/vuepress-plugin-code-block
+    codeBlockPlugin(),
+  ],
 })

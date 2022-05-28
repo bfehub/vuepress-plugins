@@ -1,3 +1,6 @@
+.temp
+.cache
+
 lib
 dist
 node_modules
