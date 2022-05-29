@@ -5,7 +5,8 @@
     "jsx": "preserve",
     "module": "ES2020",
     "paths": {
-      "@bfehub/*": ["./packages/*/src"]
+      "@bfehub/*": ["./packages/*/src"],
+      "@internal/*": ["./packages/plugin-code-block/src/client-internal/*"]
     },
     "types": ["vite/client"]
   },

@@ -1,9 +1,10 @@
 import { path } from '@vuepress/utils'
 import type { Plugin } from '@vuepress/core'
 import type { CodeUserConfig, CodeLocaleConfig } from '../shared'
-import { vitePageHMR } from './plugins'
 import { createPageCodeDepsHelper } from './utils'
+import { prepareIframeComponents } from './prepare'
 import { resolveOptions, resolveHtmlBlock, resolveScriptSetup } from './resolve'
+import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins'
 
 /**
  * Options of @bfehub/vuepress-plugin-code-block
@@ -30,15 +31,24 @@ export const codeBlockPlugin = (
       resolveHtmlBlock(md, store, options)
     },
 
-    extendsPage(page) {
+    extendsPage(page, app) {
       resolveScriptSetup(page, store)
+      app.pages && prepareIframeComponents(app, store)
+    },
+
+    onInitialized(app) {
+      prepareIframeComponents(app, store)
     },
 
     extendsBundlerOptions(bundlerOptions, app) {
       if (app.options.bundler.name === '@vuepress/bundler-vite') {
         bundlerOptions.viteOptions ??= {}
         bundlerOptions.viteOptions.plugins ??= []
-        bundlerOptions.viteOptions.plugins.push(vitePageHMR(app))
+        bundlerOptions.viteOptions.plugins.push(
+          vitePageHMR(app),
+          vitePageProxy(app),
+          vitePageIframe(app)
+        )
       }
     },
   }

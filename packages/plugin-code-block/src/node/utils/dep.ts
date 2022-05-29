@@ -21,6 +21,10 @@ export interface PageCodeDep {
    * 组件属性
    */
   compAttrs: CodeNodeConfig
+  /**
+   * 是否生成 iframe 模式
+   */
+  isGenerateIframe?: boolean
 }
 
 /**
@@ -38,7 +42,7 @@ export interface PageCodeDepsHelper {
   remove: (code: PageCodeDep) => void
 
   /**
-   * Get all code's that depend on the `path`
+   * Get all code's that depend on the `pagePath`
    */
   get: (path: string) => PageCodeDep[]
 }

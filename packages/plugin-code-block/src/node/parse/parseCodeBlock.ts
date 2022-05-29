@@ -65,6 +65,7 @@ export const parseCodeBlock = (
     if (!isRaw && isVueCode) {
       html[i] = parseVue(node, dep)
 
+      dep.isGenerateIframe = true
       store.add(dep)
 
       continue

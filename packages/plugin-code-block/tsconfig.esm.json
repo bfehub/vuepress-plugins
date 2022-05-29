@@ -4,7 +4,10 @@
     "module": "ES2020",
     "rootDir": "./src",
     "outDir": "./lib",
-    "types": ["@vuepress/client/types"]
+    "types": ["@vuepress/client/types", "vite/client"],
+    "paths": {
+      "@internal/*": ["./src/client-internal/*"]
+    }
   },
-  "include": ["./src/client", "./src/shared"]
+  "include": ["./src/client", "./src/client-iframe", "./src/shared"]
 }

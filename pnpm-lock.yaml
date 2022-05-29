@@ -88,6 +88,7 @@ importers:
       posthtml-parser: ^0.11.0
       posthtml-render: ^3.0.0
       vue: ^3.2.33
+      vue-router: ^4.0.15
     dependencies:
       '@bfehub/vuepress-plugin-page-map': link:../plugin-page-map
       '@types/markdown-it': 12.2.3
@@ -102,6 +103,7 @@ importers:
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
       vue: 3.2.36
+      vue-router: 4.0.15_vue@3.2.36
 
   packages/plugin-page-map:
     specifiers:

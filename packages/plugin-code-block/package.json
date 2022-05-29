@@ -34,7 +34,8 @@
     "markdown-it": "^13.0.1",
     "posthtml-parser": "^0.11.0",
     "posthtml-render": "^3.0.0",
-    "vue": "^3.2.33"
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15"
   },
   "publishConfig": {
     "access": "public"
