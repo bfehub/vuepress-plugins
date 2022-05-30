@@ -13,6 +13,8 @@ export const vitePageIframe = (app: App): Plugin => {
         inputs.push(input)
       } else if (typeof input === 'object') {
         inputs.push(...Object.values(input))
+      } else if (Array.isArray(input)) {
+        inputs.push(...(input as any[]))
       }
       inputs.push(app.dir.temp('vite-root/~iframe.html'))
 

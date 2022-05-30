@@ -1,4 +1,4 @@
-import { components } from '@internal/pagesIframeComponents'
+import { components } from '@internal/pagesVmiComponents'
 import { computed, defineComponent, h } from 'vue'
 import { useRoute } from 'vue-router'
 

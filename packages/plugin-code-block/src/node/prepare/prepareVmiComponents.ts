@@ -4,7 +4,7 @@ import type { PageCodeDep, PageCodeDepsHelper } from '../utils'
 /**
  * Generate component path to components map temp file
  */
-export const prepareIframeComponents = async (
+export const prepareVmiComponents = async (
   app: App,
   store: PageCodeDepsHelper
 ) => {
@@ -31,5 +31,5 @@ ${[...map.values()]
 }
 `
 
-  await app.writeTemp('internal/pagesIframeComponents.js', content)
+  await app.writeTemp('internal/pagesVmiComponents.js', content)
 }

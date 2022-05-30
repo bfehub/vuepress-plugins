@@ -1,1 +1,1 @@
-export * from './prepareIframeComponents'
+export * from './prepareVmiComponents'

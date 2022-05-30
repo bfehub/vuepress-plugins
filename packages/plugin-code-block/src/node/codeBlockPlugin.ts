@@ -2,7 +2,7 @@ import { path } from '@vuepress/utils'
 import type { Plugin } from '@vuepress/core'
 import type { CodeUserConfig, CodeLocaleConfig } from '../shared'
 import { createPageCodeDepsHelper } from './utils'
-import { prepareIframeComponents } from './prepare'
+import { prepareVmiComponents } from './prepare'
 import { resolveOptions, resolveHtmlBlock, resolveScriptSetup } from './resolve'
 import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins'
 
@@ -33,11 +33,11 @@ export const codeBlockPlugin = (
 
     extendsPage(page, app) {
       resolveScriptSetup(page, store)
-      app.pages && prepareIframeComponents(app, store)
+      app.pages && prepareVmiComponents(app, store)
     },
 
     onInitialized(app) {
-      prepareIframeComponents(app, store)
+      prepareVmiComponents(app, store)
     },
 
     extendsBundlerOptions(bundlerOptions, app) {
