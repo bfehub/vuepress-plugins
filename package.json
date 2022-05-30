@@ -20,8 +20,8 @@
     "docs:release": "pnpm build && pnpm docs:build"
   },
   "devDependencies": {
-    "@bfehub/eslint-config-vue": "^1.2.0",
-    "@bfehub/stylelint-config-basic": "^1.2.0",
+    "@bfehub/eslint-config-vue": "^1.3.0",
+    "@bfehub/stylelint-config-basic": "^1.3.0",
     "@changesets/cli": "^2.22.0",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
