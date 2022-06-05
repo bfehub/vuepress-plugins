@@ -1,3 +1,4 @@
+import type { App } from '@vuepress/core'
 import type * as MarkdownIt from 'markdown-it'
 import type { MarkdownEnv } from '@vuepress/markdown'
 import type { CodeBlockPluginOptions } from '..'
@@ -6,6 +7,7 @@ import { parseCodeBlock } from '../parse'
 
 export const resolveHtmlBlock = (
   md: MarkdownIt,
+  app: App,
   store: PageCodeDepsHelper,
   options: CodeBlockPluginOptions
 ) => {
@@ -22,6 +24,7 @@ export const resolveHtmlBlock = (
 
     if (content.startsWith(`<${options.name}`)) {
       tokens[idx].content = parseCodeBlock(
+        app,
         store,
         options,
         content,

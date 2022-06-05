@@ -7,13 +7,14 @@ export const parseRaw = (node: Node, dep: PageCodeDep): Node => {
     return node
   }
 
-  const sources = readSource(dep.compPath)
+  const sources = readSource(dep.compPath, false, false)
 
   if (sources.length === 1) {
     return sources[0].highlightCode
   }
 
   node.tag = 'CodeGroup'
+  node.attrs = {}
   node.content = sources.map((source) => {
     return {
       tag: 'CodeGroupItem',

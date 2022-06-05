@@ -4,15 +4,16 @@ import type { CodeSource } from '../../shared'
 
 export const readSource = (
   filePath: string,
-  scanImport = false
+  scanImport?: boolean,
+  noLineNumbers?: boolean
 ): CodeSource[] => {
   const sources: CodeSource[] = []
 
-  const source = readFileSource(filePath)
+  const source = readFileSource(filePath, noLineNumbers)
   sources.push(source)
 
   if (scanImport) {
-    parseImports(source.rawCode, path.dirname(filePath), sources)
+    parseImports(source.rawCode, path.dirname(filePath), sources, noLineNumbers)
   }
 
   return sources
@@ -21,7 +22,8 @@ export const readSource = (
 export const parseImports = (
   rawCode: string,
   dirPath: string,
-  sources: CodeSource[]
+  sources: CodeSource[],
+  noLineNumbers: boolean
 ) => {
   const imports = scanImports(rawCode)
 
@@ -29,13 +31,16 @@ export const parseImports = (
     if (mod.startsWith('.')) {
       const filePath = resolve(dirPath, mod)
       if (filePath) {
-        sources.push(readFileSource(filePath))
+        sources.push(readFileSource(filePath, noLineNumbers))
       }
     }
   }
 }
 
-export const readFileSource = (filePath: string): CodeSource => {
+export const readFileSource = (
+  filePath: string,
+  noLineNumbers: boolean
+): CodeSource => {
   let code = ''
   const name = path.basename(filePath)
 
@@ -48,6 +53,6 @@ export const readFileSource = (filePath: string): CodeSource => {
   return {
     name,
     rawCode: code,
-    highlightCode: highlight(code, path.extname(name).slice(1)),
+    highlightCode: highlight(code, path.extname(name).slice(1), noLineNumbers),
   }
 }

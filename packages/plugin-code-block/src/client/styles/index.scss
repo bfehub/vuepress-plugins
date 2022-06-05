@@ -1,6 +1,6 @@
 .vmi-previewer {
-  background-color: #fff;
-  border: 1px solid #ebedf1;
+  background-color: var(--c-bg);
+  border: 1px solid var(--c-border);
   border-radius: 1px;
 }
 
@@ -14,7 +14,7 @@
   justify-content: space-between;
   height: 40px;
   padding: 0 5px;
-  border-top: 1px dashed #ebedf1;
+  border-top: 1px dashed var(--c-border);
 
   &-button {
     display: flex;
@@ -35,7 +35,7 @@
 }
 
 .vmi-previewer-sources {
-  border-top: 1px dashed #ebedf1;
+  border-top: 1px dashed var(--c-border);
 
   pre[class*='language-'] {
     margin-top: 0;
@@ -50,8 +50,10 @@
 .vmi-previewer-tabs {
   position: relative;
   display: flex;
+  border-bottom: 1px dashed var(--c-border);
 
   &-tab {
+    position: relative;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -64,7 +66,7 @@
     outline: none;
 
     &:hover {
-      color: #4569d4;
+      color: var(--c-brand);
     }
 
     svg {
@@ -72,12 +74,16 @@
     }
   }
 
-  &-bar {
+  .active::before {
     position: absolute;
     bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
     height: 2px;
     pointer-events: none;
-    background: #4569d4;
+    content: '';
+    background: var(--c-brand);
     transition: left 0.2s, width 0.2s;
   }
 }

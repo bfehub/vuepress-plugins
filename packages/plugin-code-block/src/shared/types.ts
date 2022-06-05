@@ -44,18 +44,6 @@ export interface CodeSource {
 
 export interface CodeUserConfig {
   /**
-   * 用于去除 demo 渲染容器的内边距。
-   * @default false
-   */
-  compact?: boolean
-
-  /**
-   * 用于设置 demo 渲染容器的背景色。
-   * @default ''
-   */
-  background?: string
-
-  /**
    * 用于控制当前 demo 的包裹容器是否默认展开源代码显示。
    * @default false
    */
@@ -65,7 +53,7 @@ export interface CodeUserConfig {
    * 用于控制 Demo 预览器部分功能按钮的隐藏
    * @default []
    */
-  hideActions?: string[]
+  // hideActions?: string[]
 }
 
 export interface CodeNodeConfig extends CodeUserConfig {
@@ -75,22 +63,10 @@ export interface CodeNodeConfig extends CodeUserConfig {
   id: string
 
   /**
-   * 当前 demo 组件的路径地址，相对路径可配置别名。
+   * 当前 demo 组件的路径地址。
    * @default ''
    */
   src: string
-
-  /**
-   * 用于配置该外部 Demo 的标题，配置后会在 Demo 预览器中显示。
-   * @default ''
-   */
-  title?: string
-
-  /**
-   * 用于配置该外部 Demo 的简介，配置后会在 Demo 预览器中显示，支持 Markdown 语法。
-   * @default ''
-   */
-  desc?: string
 
   /**
    * 用于指示该 demo 为源代码，将会把内容当做代码块渲染不会渲染效果
@@ -105,20 +81,26 @@ export interface CodeNodeConfig extends CodeUserConfig {
   inline?: boolean
 
   /**
-   * 用于控制 demo 的包裹容器是否设置 transform 的 CSS 值以控制 position: fixed; 的元素相对于 demo 容器定位。
+   * 使用 iframe 模式渲染当前 demo，对于渲染 layout 型的 demo 非常有用，当我们传递数值时可以控制 iframe 的高度。
    * @default false
    */
-  transform?: boolean
+  iframe?: boolean | number
 
   /**
    * 标记当前 demo 为调试 demo，这意味着在生产模式下该 demo 是不可见的；另外，调试 demo 在开发环境下也会展示一个 DEV ONLY 的标记，以便开发者将其和其他 demo 区分开来。
    * @default false
    */
-  debug?: boolean
+  // debug?: boolean
 
   /**
-   * 使用 iframe 模式渲染当前 demo，对于渲染 layout 型的 demo 非常有用，当我们传递数值时可以控制 iframe 的高度，访问 iframe 模式 了解更多。
+   * 用于配置该外部 Demo 的标题，配置后会在 Demo 预览器中显示。
+   * @default ''
+   */
+  // title?: string
+
+  /**
+   * 用于控制 demo 的包裹容器是否设置 transform 的 CSS 值以控制 position: fixed; 的元素相对于 demo 容器定位。
    * @default false
    */
-  iframe?: boolean | number
+  // transform?: boolean
 }

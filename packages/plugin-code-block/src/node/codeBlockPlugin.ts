@@ -27,8 +27,8 @@ export const codeBlockPlugin = (
 
     clientConfigFile: path.resolve(__dirname, '../client/clientConfig.js'),
 
-    extendsMarkdown(md) {
-      resolveHtmlBlock(md, store, options)
+    extendsMarkdown(md, app) {
+      resolveHtmlBlock(md, app, store, options)
     },
 
     extendsPage(page, app) {

@@ -7,6 +7,7 @@ export const parseInline = (node: Node, dep: PageCodeDep): Node => {
   }
 
   node.tag = dep.compName
+  node.attrs = {}
 
   return node
 }

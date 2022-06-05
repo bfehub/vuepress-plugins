@@ -1,6 +1,7 @@
 import { path, hash } from '@vuepress/utils'
 import { Node, parser } from 'posthtml-parser'
 import { render } from 'posthtml-render'
+import type { App } from '@vuepress/core'
 import type { CodeBlockPluginOptions } from '..'
 import type { PageCodeDep, PageCodeDepsHelper } from '../utils'
 import type { CodeNodeConfig } from '../../shared'
@@ -10,6 +11,7 @@ import { parseInline } from './parseInline'
 import { parseRaw } from './parseRaw'
 
 export const parseCodeBlock = (
+  app: App,
   store: PageCodeDepsHelper,
   options: CodeBlockPluginOptions,
   content: string,
@@ -63,7 +65,7 @@ export const parseCodeBlock = (
     }
 
     if (!isRaw && isVueCode) {
-      html[i] = parseVue(node, dep)
+      html[i] = parseVue(app, node, dep)
 
       dep.isGenerateIframe = true
       store.add(dep)
