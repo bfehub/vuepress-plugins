@@ -34,20 +34,20 @@
   border-right: 1px solid var(--c-border);
   transition: transform var(--t-transform), background-color var(--t-color),
     border-color var(--t-color);
-  scrollbar-width: thin;
-  scrollbar-color: var(--c-brand) var(--c-border);
+  // scrollbar-width: thin;
+  // scrollbar-color: var(--c-brand) var(--c-border);
 
-  &::-webkit-scrollbar {
-    width: 7px;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 7px;
+  // }
 
-  &::-webkit-scrollbar-track {
-    background-color: var(--c-border);
-  }
+  // &::-webkit-scrollbar-track {
+  //   background-color: var(--c-border);
+  // }
 
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--c-brand);
-  }
+  // &::-webkit-scrollbar-thumb {
+  //   background-color: var(--c-brand);
+  // }
 }
 
 .sidebar-mask {
@@ -155,6 +155,14 @@ h6 {
 
   img {
     max-width: 100%;
+  }
+
+  .theme-content {
+    display: flex;
+  }
+
+  .vuepress-content {
+    flex: 1;
   }
 }
 

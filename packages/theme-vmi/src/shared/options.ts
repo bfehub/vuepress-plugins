@@ -49,6 +49,11 @@ export interface DefaultThemePluginsOptions {
    * Enable @vuepress/plugin-prismjs or not
    */
   prismjs?: boolean
+
+  /**
+   * Enable @vuepress/plugin-toc or not
+   */
+  toc?: boolean
 }
 
 export type DefaultThemeLocaleOptions = DefaultThemeData

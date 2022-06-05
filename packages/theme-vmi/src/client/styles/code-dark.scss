@@ -1,0 +1,54 @@
+html.dark {
+  .language-css .token.string,
+  .style .token.string,
+  .token.entity,
+  .token.operator,
+  .token.url {
+    background: transparent;
+  }
+
+  .token.constant,
+  .token.deleted,
+  .token.property,
+  .token.symbol,
+  .token.tag {
+    color: #f92672;
+  }
+
+  .token.attr-name,
+  .token.builtin,
+  .token.char,
+  .token.inserted,
+  .token.selector,
+  .token.string {
+    color: #a6e22e;
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: #e6db74;
+  }
+
+  .token.punctuation {
+    color: hsl(0deg 0% 100% / 85%);
+  }
+
+  .token.keyword {
+    color: #66d9ef;
+  }
+
+  .token.boolean,
+  .token.number {
+    color: #ae81ff;
+  }
+
+  .theme-default-content {
+    pre,
+    pre[class*='language-'] {
+      code {
+        color: hsl(0deg 0% 100% / 85%);
+      }
+    }
+  }
+}

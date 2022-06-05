@@ -35,6 +35,7 @@
     "@vuepress/plugin-palette": "^2.0.0-beta.46",
     "@vuepress/plugin-prismjs": "^2.0.0-beta.46",
     "@vuepress/plugin-theme-data": "^2.0.0-beta.46",
+    "@vuepress/plugin-toc": "2.0.0-beta.46",
     "@vuepress/shared": "^2.0.0-beta.46",
     "@vuepress/utils": "^2.0.0-beta.46",
     "@vueuse/core": "^8.2.1",

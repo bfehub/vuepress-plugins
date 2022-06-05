@@ -3,3 +3,26 @@
     vertical-align: middle;
   }
 }
+
+// plugin-toc
+.vuepress-toc {
+  width: 12rem;
+  padding-left: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.vuepress-toc-list {
+  position: sticky;
+  top: calc(var(--navbar-height) + 2 * var(--navbar-padding-v) + 32px);
+}
+
+.vuepress-toc-link {
+  font-size: 0.8em;
+  color: var(--c-text);
+  cursor: pointer;
+
+  &:hover,
+  &.active {
+    color: var(--c-text-accent);
+  }
+}

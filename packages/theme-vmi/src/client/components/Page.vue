@@ -10,7 +10,10 @@ import PageNav from '@theme/PageNav.vue'
     <div class="theme-default-content">
       <slot name="content-top" />
 
-      <Content />
+      <div class="theme-content">
+        <Content class="vuepress-content" />
+        <Toc />
+      </div>
 
       <slot name="content-bottom" />
     </div>

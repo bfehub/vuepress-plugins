@@ -9,6 +9,7 @@ import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 import { palettePlugin } from '@vuepress/plugin-palette'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
+import { tocPlugin } from '@vuepress/plugin-toc'
 import { fs, path } from '@vuepress/utils'
 import type {
   DefaultThemeLocaleOptions,
@@ -65,10 +66,13 @@ export const defaultTheme = ({
       // @vuepress/plugin-active-header-link
       themePlugins.activeHeaderLinks !== false
         ? activeHeaderLinksPlugin({
-            headerLinkSelector: 'a.sidebar-item',
+            headerLinkSelector:
+              themePlugins.toc !== false
+                ? 'a.vuepress-toc-link'
+                : 'a.sidebar-item',
             headerAnchorSelector: '.header-anchor',
             // should greater than page transition duration
-            delay: 300,
+            delay: 100,
           })
         : [],
 
@@ -161,6 +165,9 @@ export const defaultTheme = ({
 
       // @vuepress/plugin-theme-data
       themeDataPlugin({ themeData: localeOptions }),
+
+      // @vuepress/plugin-toc
+      themePlugins.toc !== false ? tocPlugin() : [],
     ],
   }
 }

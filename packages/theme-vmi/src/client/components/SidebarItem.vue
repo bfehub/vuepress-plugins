@@ -49,7 +49,7 @@ if (item.value.collapsible) {
 </script>
 
 <template>
-  <li>
+  <li v-if="depth < 2">
     <AutoLink v-if="item.link" :class="itemClass" :item="item" />
     <p
       v-else
