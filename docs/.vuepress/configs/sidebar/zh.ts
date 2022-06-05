@@ -4,12 +4,17 @@ export const zh: SidebarConfig = {
   '/zh/guide/': [
     {
       text: '指南',
-      children: ['/zh/guide/README.md', '/zh/guide/getting-started.md'],
+      children: [
+        '/zh/guide/README.md',
+        '/zh/guide/page-map.md',
+        '/zh/guide/code-block.md',
+        '/zh/guide/theme-vmi.md',
+      ],
     },
   ],
   '/zh/components/': [
     {
-      text: '介绍',
+      text: '指引',
       children: ['/zh/components/README.md'],
     },
     {

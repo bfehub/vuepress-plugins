@@ -1,14 +1,11 @@
 ---
 home: true
 title: 首页
-heroImage: /images/hero.png
+# heroImage: /images/hero.png
 actions:
   - text: 快速上手
-    link: /zh/guide/getting-started.html
-    type: primary
-  - text: 项目简介
     link: /zh/guide/
-    type: secondary
+    type: primary
 features:
   - title: 简洁至上
     details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
@@ -24,19 +21,3 @@ features:
     details: 默认的打包工具是 Vite ，也同样支持 Webpack 。选一个你喜欢的来使用吧！
 footer: MIT Licensed | Copyright © 2018-present Evan You
 ---
-
-### 像数 1, 2, 3 一样容易
-
-```bash
-# 在你的项目中安装
-yarn add -D vuepress@next
-
-# 新建一个 markdown 文件
-echo '# Hello VuePress' > README.md
-
-# 开始写作
-yarn vuepress dev
-
-# 构建静态文件
-yarn vuepress build
-```

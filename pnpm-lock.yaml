@@ -47,6 +47,7 @@ importers:
       '@bfehub/vuepress-plugin-page-map': workspace:*
       '@bfehub/vuepress-theme-vmi': workspace:*
       '@vuepress/client': 2.0.0-beta.46
+      '@vuepress/plugin-search': 2.0.0-beta.46
       '@vuepress/theme-default': 2.0.0-beta.46
       anywhere: ^1.5.0
       element-plus: ^2.2.2
@@ -58,6 +59,7 @@ importers:
       '@bfehub/vuepress-plugin-page-map': link:../packages/plugin-page-map
       '@bfehub/vuepress-theme-vmi': link:../packages/theme-vmi
       '@vuepress/client': 2.0.0-beta.46
+      '@vuepress/plugin-search': 2.0.0-beta.46
       '@vuepress/theme-default': 2.0.0-beta.46
       anywhere: 1.6.0
       element-plus: 2.2.2_vue@3.2.36
@@ -84,6 +86,7 @@ importers:
       '@vuepress/plugin-prismjs': 2.0.0-beta.46
       '@vuepress/shared': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
+      '@vueuse/core': ^8.2.1
       markdown-it: ^13.0.1
       posthtml-parser: ^0.11.0
       posthtml-render: ^3.0.0
@@ -99,6 +102,7 @@ importers:
       '@vuepress/plugin-prismjs': 2.0.0-beta.46
       '@vuepress/shared': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
+      '@vueuse/core': 8.5.0_vue@3.2.36
       markdown-it: 13.0.1
       posthtml-parser: 0.11.0
       posthtml-render: 3.0.0
@@ -129,6 +133,7 @@ importers:
       '@vuepress/plugin-palette': ^2.0.0-beta.46
       '@vuepress/plugin-prismjs': ^2.0.0-beta.46
       '@vuepress/plugin-theme-data': ^2.0.0-beta.46
+      '@vuepress/plugin-toc': 2.0.0-beta.46
       '@vuepress/shared': ^2.0.0-beta.46
       '@vuepress/utils': ^2.0.0-beta.46
       '@vueuse/core': ^8.2.1
@@ -148,6 +153,7 @@ importers:
       '@vuepress/plugin-palette': 2.0.0-beta.46
       '@vuepress/plugin-prismjs': 2.0.0-beta.46
       '@vuepress/plugin-theme-data': 2.0.0-beta.46
+      '@vuepress/plugin-toc': 2.0.0-beta.46
       '@vuepress/shared': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
       '@vueuse/core': 8.5.0_vue@3.2.36
@@ -1275,6 +1281,20 @@ packages:
       - supports-color
     dev: false
 
+  /@vuepress/plugin-search/2.0.0-beta.46:
+    resolution: {integrity: sha512-gk8im+UoWgR+1LcuerBgnH+Guq7KNW4d+Q2EICAnpDgfL0AUII11s3eT5ZsdssUTWBsYdah7DmBJLeR+sOxbqg==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.46
+      '@vuepress/core': 2.0.0-beta.46
+      '@vuepress/shared': 2.0.0-beta.46
+      '@vuepress/utils': 2.0.0-beta.46
+      chokidar: 3.5.3
+      vue: 3.2.36
+      vue-router: 4.0.15_vue@3.2.36
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@vuepress/plugin-theme-data/2.0.0-beta.46:
     resolution: {integrity: sha512-ULjBKvC1VTaokajqu9W2KTavH4m0/6NDt/BJn1QfKgb+lJYyn6ox3isTisFs3u268T600w4k7jid4ky/fvypbA==}
     dependencies:
@@ -1284,6 +1304,18 @@ packages:
       '@vuepress/shared': 2.0.0-beta.46
       '@vuepress/utils': 2.0.0-beta.46
       vue: 3.2.36
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@vuepress/plugin-toc/2.0.0-beta.46:
+    resolution: {integrity: sha512-BrsqRRBN+w/ZMCuP+b307GAoHzqYQ04ERAcGR/sSwhP/AXp+IqE+nMjEw7MOEgLQOR1Qho1kzz5gXwBTGxfWXw==}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.46
+      '@vuepress/core': 2.0.0-beta.46
+      '@vuepress/utils': 2.0.0-beta.46
+      vue: 3.2.36
+      vue-router: 4.0.15_vue@3.2.36
     transitivePeerDependencies:
       - supports-color
     dev: false

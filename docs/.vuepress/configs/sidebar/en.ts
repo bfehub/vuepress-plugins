@@ -4,7 +4,7 @@ export const en: SidebarConfig = {
   '/guide/': [
     {
       text: 'Guide',
-      children: ['/guide/README.md', '/guide/getting-started.md'],
+      children: ['/guide/README.md'],
     },
   ],
   '/components/': [
@@ -15,10 +15,6 @@ export const en: SidebarConfig = {
     {
       text: 'Components',
       children: ['/components/npm-badge/index.md'],
-    },
-    {
-      text: 'Element',
-      children: ['/components/element/button/index.md'],
     },
   ],
 }

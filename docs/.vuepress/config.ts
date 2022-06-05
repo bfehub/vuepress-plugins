@@ -2,26 +2,29 @@ import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@bfehub/vuepress-theme-vmi'
 import { pageMapPlugin } from '@bfehub/vuepress-plugin-page-map'
 import { codeBlockPlugin } from '@bfehub/vuepress-plugin-code-block'
+import { searchPlugin } from '@vuepress/plugin-search'
 import { navbar, sidebar } from './configs'
 
 export default defineUserConfig({
-  base: '/',
+  base: '/vmi/',
 
   locales: {
     '/': {
       lang: 'en-US',
-      title: 'VuePress',
-      description: 'Vue-powered Static Site Generator',
+      title: 'Vmi',
+      description: 'Vuepress plug-ins and themes',
     },
 
     '/zh/': {
       lang: 'zh-CN',
-      title: 'VuePress',
-      description: 'Vue 驱动的静态网站生成器',
+      title: 'Vmi',
+      description: '用于组件开发场景的 VuePress 的插件和主题',
     },
   },
 
   theme: defaultTheme({
+    logo: '/images/hero.png',
+
     locales: {
       '/': {
         navbar: navbar.en,
@@ -45,5 +48,8 @@ export default defineUserConfig({
 
     // @bfehub/vuepress-plugin-code-block
     codeBlockPlugin(),
+
+    // @vuepress/plugin-search
+    searchPlugin(),
   ],
 })

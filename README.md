@@ -1,26 +1,29 @@
-# vuepress-next
+# 介绍
 
-[![github check](https://github.com/vuepress/vuepress-next/workflows/check/badge.svg)](https://github.com/vuepress/vuepress-next/actions?query=workflow%3Acheck)
-[![github docs](https://github.com/vuepress/vuepress-next/workflows/docs/badge.svg)](https://github.com/vuepress/vuepress-next/actions?query=workflow%3Adocs)
-[![npm](https://badgen.net/npm/v/vuepress/next)](https://www.npmjs.com/package/vuepress)
-[![coverage](https://coveralls.io/repos/github/vuepress/vuepress-next/badge.svg?branch=main)](https://coveralls.io/github/vuepress/vuepress-next?branch=main)
-[![license](https://badgen.net/github/license/vuepress/vuepress-next)](https://github.com/vuepress/vuepress-next/blob/main/LICENSE)
-[![discord](https://badgen.net/discord/online-members/ptFjefy6H5?icon=discord&label=discord)](https://discord.gg/ptFjefy6H5)
+Vmi 是一个用于组件开发场景的 VuePress 的插件集合。尽量通过插件能有相似 [dumi](https://d.umijs.org/zh-CN) 的 Demo 体验，又能保持 VuePress 强大的文档编写能力。
 
-## Status: Beta
+## 特性
 
-For users from VuePress v1, please check out the [migration guide](https://v2.vuepress.vuejs.org/guide/migration.html).
+- 支持页面映射，自定义组织组件文档。
 
-For users who want to follow our progress or contribute to this project, please check out the [roadmap](https://github.com/vuepress/vuepress-next/discussions/68).
+- 强大的 Demo 演示能力，支持 Iframe 等多种模式。
 
-## Documentation
+## 示例
 
-https://v2.vuepress.vuejs.org
+[文档和演示](https://bfehub.github.io/vmi/)
 
-## Contribution
+亮色模式
 
-See [Contributing Guide](https://github.com/vuepress/vuepress-next/blob/main/docs/contributing.md).
+![light](./docs/.vuepress/public/demos/light.png)
+
+暗黑模式
+
+![dark](./docs/.vuepress/public/demos/dark.png)
+
+## Issue
+
+If you have a better suggestion, please [create an issue](https://github.com/bfehub/vmi/issues)
 
 ## License
 
-[MIT](https://github.com/vuepress/vuepress-next/blob/main/LICENSE)
+The code is released under [the MIT license](https://github.com/bfehub/vmi/blob/master/LICENSE)
