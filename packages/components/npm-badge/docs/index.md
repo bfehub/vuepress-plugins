@@ -1,9 +1,9 @@
 # NpmBadge
 
-English English English English English English English English
+Refer to `vuepress` official local component for displaying badges of npm packages.
 
 ## Basic
 
-English English English English English English English English
+Specify `package` package name and `dist-tag` default `latest`.
 
 <demo src="../examples/basic.vue"></demo>

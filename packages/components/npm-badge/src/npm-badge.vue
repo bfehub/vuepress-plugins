@@ -21,7 +21,7 @@ const props = defineProps({
   distTag: {
     type: String,
     required: false,
-    default: 'next',
+    default: 'latest',
   },
 })
 

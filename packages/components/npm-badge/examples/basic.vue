@@ -1,7 +1,3 @@
 <template>
-  <VpNpmBadge package="@vuepress/core" />
+  <VpNpmBadge package="@vuepress/core" dist-tag="next" />
 </template>
-
-<script setup lang="ts">
-import { VpNpmBadge } from '@bfehub/vuepress-components'
-</script>
