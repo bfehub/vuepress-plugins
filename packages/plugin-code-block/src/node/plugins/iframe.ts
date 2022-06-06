@@ -16,12 +16,12 @@ export const vitePageIframe = (app: App): Plugin => {
       } else if (Array.isArray(input)) {
         inputs.push(...(input as any[]))
       }
-      inputs.push(app.dir.temp('vite-root/~iframe.html'))
+      inputs.push(app.dir.temp('vite-root/-iframe.html'))
 
       config.build.rollupOptions.input = inputs
 
       await app.writeTemp(
-        'vite-root/~iframe.html',
+        'vite-root/-iframe.html',
         fs
           .readFileSync(
             app.env.isBuild

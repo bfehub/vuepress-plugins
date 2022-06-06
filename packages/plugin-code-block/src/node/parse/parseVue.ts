@@ -9,7 +9,7 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
   }
 
   const sources = readSource(dep.compPath, true, true)
-  const iframeSrc = `${app.options.base}~iframe.html#/${dep.compAttrs.id}`
+  const iframeSrc = `${app.options.base}-iframe.html#/${dep.compAttrs.id}`
 
   node.tag = 'VmiPreviewer'
   node.attrs = {}

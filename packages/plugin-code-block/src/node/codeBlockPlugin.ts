@@ -31,13 +31,13 @@ export const codeBlockPlugin = (
       resolveHtmlBlock(md, app, store, options)
     },
 
-    extendsPage(page, app) {
+    async extendsPage(page, app) {
       resolveScriptSetup(page, store)
-      app.pages && prepareVmiComponents(app, store)
+      app.pages && (await prepareVmiComponents(app, store))
     },
 
-    onInitialized(app) {
-      prepareVmiComponents(app, store)
+    async onInitialized(app) {
+      await prepareVmiComponents(app, store)
     },
 
     extendsBundlerOptions(bundlerOptions, app) {
