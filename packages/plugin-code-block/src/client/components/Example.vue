@@ -1,5 +1,8 @@
 <template>
-  <div class="vmi-previewer-example">
+  <div
+    class="vmi-previewer-example"
+    :style="[props.transform ? 'transform: translate(0px, 0px);' : '']"
+  >
     <iframe
       v-if="props.iframe"
       width="100%"
@@ -23,6 +26,10 @@ const props = defineProps({
   iframeSrc: {
     type: String,
     default: '',
+  },
+  transform: {
+    type: Boolean,
+    default: false,
   },
 })
 

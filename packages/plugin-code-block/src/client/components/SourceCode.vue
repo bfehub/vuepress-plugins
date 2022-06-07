@@ -1,8 +1,19 @@
 <template>
   <div class="vmi-previewer-actions">
     <div class="vmi-previewer-actions-left">
-      <span class="vmi-previewer-actions-button" @click="openIframe">
+      <span
+        v-if="!hideActions.includes('EXTERNAL')"
+        class="vmi-previewer-actions-button"
+        @click="openIframe"
+      >
         <Open />
+      </span>
+      <span
+        v-if="props.iframe"
+        class="vmi-previewer-actions-button"
+        @click="refreshIframe"
+      >
+        <Refresh />
       </span>
     </div>
     <div class="vmi-previewer-actions-right">
@@ -42,11 +53,17 @@ import Copy from '../icons/Copy.vue'
 import CopySuccess from '../icons/CopySuccess.vue'
 import File from '../icons/File.vue'
 import Open from '../icons/Open.vue'
+import Refresh from '../icons/Refresh.vue'
 
 /**
  * Props define
  */
 const props = defineProps({
+  id: String,
+  iframe: {
+    type: [Boolean, String, Number],
+    default: false,
+  },
   iframeSrc: {
     type: String,
     default: '',
@@ -55,7 +72,21 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  hideActions: {
+    type: String,
+    default: '',
+  },
 })
+
+/**
+ * Parse props
+ */
+const hideActions = ref<string[]>([])
+try {
+  if (props.hideActions) {
+    hideActions.value = JSON.parse(props.hideActions)
+  }
+} catch (error) {}
 
 /**
  * Get slots
@@ -102,5 +133,12 @@ const handleCopy = async () => {
  */
 const openIframe = () => {
   window.open(props.iframeSrc)
+}
+
+const refreshIframe = (e: MouseEvent) => {
+  const iframe = (
+    e.target as HTMLElement
+  ).parentNode.parentNode.parentNode.parentNode.querySelector('iframe')
+  iframe.src = iframe.getAttribute('src')
 }
 </script>

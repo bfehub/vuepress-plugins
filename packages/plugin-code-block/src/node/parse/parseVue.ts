@@ -9,7 +9,10 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
   }
 
   const sources = readSource(dep.compPath, true, true)
-  const iframeSrc = `${app.options.base}-iframe.html#/${dep.compAttrs.id}`
+
+  const iframeSrc = dep.compAttrs.iframeSrc
+    ? dep.compAttrs.iframeSrc
+    : `${app.options.base}-iframe.html#/${dep.compAttrs.id}`
 
   node.tag = 'VmiPreviewer'
   node.attrs = {}
@@ -20,6 +23,7 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
         id: dep.compAttrs.id,
         iframe: dep.compAttrs.iframe,
         iframeSrc,
+        transform: dep.compAttrs.transform,
       },
       content: [
         {
@@ -30,8 +34,11 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
     {
       tag: 'VmiSourceCode',
       attrs: {
+        id: dep.compAttrs.id,
+        iframe: dep.compAttrs.iframe,
         iframeSrc,
         defaultShowCode: dep.compAttrs.defaultShowCode,
+        hideActions: dep.compAttrs.hideActions as unknown as string,
       },
       content: sources.map((source) => {
         return {

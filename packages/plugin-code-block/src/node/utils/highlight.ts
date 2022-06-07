@@ -17,3 +17,7 @@ export const highlight = (
       '```'
   )
 }
+
+export const markdownText = (text: string) => {
+  return createMarkdown().render(text)
+}
