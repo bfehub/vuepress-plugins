@@ -10,13 +10,12 @@ import PageNav from '@theme/PageNav.vue'
     <div class="theme-default-content">
       <slot name="content-top" />
 
-      <div class="theme-content">
-        <Content class="vuepress-content" />
-        <Toc />
-      </div>
+      <Content />
 
       <slot name="content-bottom" />
     </div>
+
+    <Toc />
 
     <PageMeta />
 

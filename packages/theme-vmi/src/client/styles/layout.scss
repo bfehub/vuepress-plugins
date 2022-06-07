@@ -148,6 +148,7 @@ h6 {
   @include content_wrapper;
 
   padding-top: 0;
+  margin-right: var(--toc-width);
 
   a:hover {
     text-decoration: underline;
@@ -155,14 +156,6 @@ h6 {
 
   img {
     max-width: 100%;
-  }
-
-  .theme-content {
-    display: flex;
-  }
-
-  .vuepress-content {
-    flex: 1;
   }
 }
 
@@ -184,6 +177,10 @@ h6 {
 
   .page {
     padding-left: var(--sidebar-width-mobile);
+  }
+
+  .theme-default-content:not(.custom) {
+    margin-right: 0;
   }
 }
 
