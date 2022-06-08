@@ -25,6 +25,8 @@ export default defineUserConfig({
   theme: defaultTheme({
     logo: '/images/hero.png',
 
+    repo: 'https://github.com/bfehub/vmi',
+
     locales: {
       '/': {
         navbar: navbar.en,

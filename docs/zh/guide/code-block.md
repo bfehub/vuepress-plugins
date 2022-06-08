@@ -16,6 +16,46 @@ module.exports = {
 }
 ```
 
+## 配置
+
+```js
+export interface CodeBlockPluginOptions {
+  name: string
+  config: CodeUserConfig
+  locales: CodeLocaleConfig
+}
+```
+
+### name
+
+编写 `demo` 使用的标签，默认 `demo` 标签。
+
+```html
+<demo src="xxx.vue"></demo>
+<!-- 如果改成 name = 'code' -->
+<code src="xxx.vue"></code>
+```
+
+### config
+
+配置 `demo` 全局属性，都可以在具体的 `demo` 标签上覆盖。
+
+```ts
+export interface CodeUserConfig {
+  /**
+   * 用于控制当前 demo 的包裹容器是否默认展开源代码显示。
+   * @default false
+   */
+  defaultShowCode?: boolean
+
+  /**
+   * 用于控制 Demo 预览器部分功能按钮的隐藏
+   * @default []
+   */
+  hideActions?: Array<'EXTERNAL'>
+}
+```
+
 ## 渲染模式
 
 以下展示的组件全部来自 `element-plus` 的使用示例。
@@ -72,7 +112,7 @@ module.exports = {
 
 ### defaultShowCode
 
-用于控制当前 demo 的包裹容器是否默认展开源代码显示。
+用于控制当前 `demo` 的包裹容器是否默认展开源代码显示。
 
 ```html
 <demo src="./demos/demo-basic.vue" defaultShowCode></demo>
@@ -81,6 +121,45 @@ module.exports = {
 渲染效果如下
 
 <demo src="./demos/demo-basic.vue" defaultShowCode></demo>
+
+### hideActions
+
+用于控制 `demo` 预览器部分功能按钮的隐藏。
+
+- `EXTERNAL`: 隐藏『在新窗口打开』的按钮
+
+```html
+<!-- 注意，单引号为必备，要确保值为有效 JSON 字符串 -->
+<demo src="./demos/demo-basic.vue" hideActions='["EXTERNAL"]'></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-basic.vue" hideActions='["EXTERNAL"]'></demo>
+
+### iframeSrc
+
+用于指定该 `demo` 的访问链接，通常在默认渲染的 `demo` 无法满足展示需要时使用。
+
+```html
+<demo src="./demos/demo-iframe.vue" iframe="200" iframeSrc="https://v2.vuepress.vuejs.org/zh/"></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-iframe.vue" iframe="200" iframeSrc="https://v2.vuepress.vuejs.org/zh/"></demo>
+
+### transform
+
+用于控制 `demo` 的包裹容器是否设置 `transform` 的 `CSS` 值以控制 `position: fixed`; 的元素相对于 `demo` 容器定位。
+
+```html
+<demo src="./demos/demo-transform.vue" transform></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-transform.vue" transform></demo>
 
 ## 其他特性
 
