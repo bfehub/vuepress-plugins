@@ -1,6 +1,6 @@
 # 组件演示
 
-在开发组件的时候提供组件效果的演示。
+在开发组件的时候提供组件效果的演示，以下展示的组件全部来自 `element-plus` 的使用示例。
 
 ## 使用
 
@@ -43,22 +43,20 @@ export interface CodeBlockPluginOptions {
 ```ts
 export interface CodeUserConfig {
   /**
-   * 用于控制当前 demo 的包裹容器是否默认展开源代码显示。
-   * @default false
-   */
-  defaultShowCode?: boolean
-
-  /**
    * 用于控制 Demo 预览器部分功能按钮的隐藏
    * @default []
    */
   hideActions?: Array<'EXTERNAL'>
+
+  /**
+   * 用于控制当前 demo 的包裹容器是否默认展开源代码显示。
+   * @default false
+   */
+  defaultShowCode?: boolean
 }
 ```
 
 ## 渲染模式
-
-以下展示的组件全部来自 `element-plus` 的使用示例。
 
 ### basic
 
@@ -110,17 +108,53 @@ export interface CodeUserConfig {
 
 ## 控制渲染
 
-### defaultShowCode
+### title
 
-用于控制当前 `demo` 的包裹容器是否默认展开源代码显示。
+用于配置 `demo` 的标题，配置后会在 `demo` 预览器中显示。
 
 ```html
-<demo src="./demos/demo-basic.vue" defaultShowCode></demo>
+<demo src="./demos/demo-basic.vue" title="这是标题"></demo>
 ```
 
 渲染效果如下
 
-<demo src="./demos/demo-basic.vue" defaultShowCode></demo>
+<demo src="./demos/demo-basic.vue" title="这是标题"></demo>
+
+### desc
+
+用于配置 `demo` 的简介，配置后会在 `demo` 预览器中显示，支持 `Markdown` 语法。
+
+```html
+<demo src="./demos/demo-basic.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-basic.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
+
+### demoUrl
+
+用于指定该 `demo` 的访问链接，通常在默认渲染的 `demo` 无法满足展示需要时使用。
+
+```html
+<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
+
+### transform
+
+用于控制 `demo` 的包裹容器是否设置 `transform` 的 `CSS` 值以控制 `position: fixed`; 的元素相对于 `demo` 容器定位。
+
+```html
+<demo src="./demos/demo-transform.vue" transform></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-transform.vue" transform></demo>
 
 ### hideActions
 
@@ -137,29 +171,17 @@ export interface CodeUserConfig {
 
 <demo src="./demos/demo-basic.vue" hideActions='["EXTERNAL"]'></demo>
 
-### iframeSrc
+### defaultShowCode
 
-用于指定该 `demo` 的访问链接，通常在默认渲染的 `demo` 无法满足展示需要时使用。
+用于控制当前 `demo` 的包裹容器是否默认展开源代码显示。
 
 ```html
-<demo src="./demos/demo-iframe.vue" iframe="200" iframeSrc="https://v2.vuepress.vuejs.org/zh/"></demo>
+<demo src="./demos/demo-basic.vue" defaultShowCode></demo>
 ```
 
 渲染效果如下
 
-<demo src="./demos/demo-iframe.vue" iframe="200" iframeSrc="https://v2.vuepress.vuejs.org/zh/"></demo>
-
-### transform
-
-用于控制 `demo` 的包裹容器是否设置 `transform` 的 `CSS` 值以控制 `position: fixed`; 的元素相对于 `demo` 容器定位。
-
-```html
-<demo src="./demos/demo-transform.vue" transform></demo>
-```
-
-渲染效果如下
-
-<demo src="./demos/demo-transform.vue" transform></demo>
+<demo src="./demos/demo-basic.vue" defaultShowCode></demo>
 
 ## 其他特性
 
@@ -181,7 +203,7 @@ export interface CodeUserConfig {
 
 <demo src="./demos/demo-file.d.ts"></demo>
 
-### 展示子文件
+### 展示组件子文件
 
 如果是 `vue` 组件，并且组件内导入了 _相对路径_ 的文件也一并展示。支持自动补全 `['.js', '.ts', '.jsx', '.tsx', '.json', '.vue']` 后缀的文件。
 

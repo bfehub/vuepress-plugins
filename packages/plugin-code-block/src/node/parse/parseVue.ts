@@ -2,6 +2,7 @@ import type { App } from '@vuepress/core'
 import type { Node } from 'posthtml-parser'
 import type { PageCodeDep } from '../utils'
 import { readSource } from './readSource'
+import { markdownText } from '../utils/highlight'
 
 export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
   if (typeof node !== 'object') {
@@ -10,8 +11,8 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
 
   const sources = readSource(dep.compPath, true, true)
 
-  const iframeSrc = dep.compAttrs.iframeSrc
-    ? dep.compAttrs.iframeSrc
+  const iframeSrc = dep.compAttrs.demoUrl
+    ? dep.compAttrs.demoUrl
     : `${app.options.base}-iframe.html#/${dep.compAttrs.id}`
 
   node.tag = 'VmiPreviewer'
@@ -31,6 +32,33 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
         },
       ],
     },
+    dep.compAttrs.title
+      ? {
+          tag: 'div',
+          attrs: {
+            class: 'vmi-previewer-title',
+          },
+          content: [
+            {
+              tag: 'a',
+              attrs: {
+                href: `#${dep.compAttrs.title}`,
+                class: 'header-anchor',
+              },
+              content: dep.compAttrs.title,
+            },
+          ],
+        }
+      : null,
+    dep.compAttrs.desc
+      ? {
+          tag: 'div',
+          attrs: {
+            class: 'vmi-previewer-desc',
+          },
+          content: markdownText(dep.compAttrs.desc),
+        }
+      : null,
     {
       tag: 'VmiSourceCode',
       attrs: {

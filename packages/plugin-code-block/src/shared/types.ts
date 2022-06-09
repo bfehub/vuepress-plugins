@@ -44,16 +44,16 @@ export interface CodeSource {
 
 export interface CodeUserConfig {
   /**
-   * 用于控制当前 demo 的包裹容器是否默认展开源代码显示。
-   * @default false
-   */
-  defaultShowCode?: boolean
-
-  /**
    * 用于控制 Demo 预览器部分功能按钮的隐藏
    * @default []
    */
   hideActions?: Array<'EXTERNAL'>
+
+  /**
+   * 用于控制当前 demo 的包裹容器是否默认展开源代码显示。
+   * @default false
+   */
+  defaultShowCode?: boolean
 }
 
 export interface CodeNodeConfig extends CodeUserConfig {
@@ -87,26 +87,26 @@ export interface CodeNodeConfig extends CodeUserConfig {
   iframe?: boolean | number
 
   /**
+   * 用于配置 demo 的标题，配置后会在 demo 预览器中显示。
+   * @default ''
+   */
+  title?: string
+
+  /**
+   * 用于配置 demo 的简介，配置后会在 demo 预览器中显示，支持 Markdown 语法。
+   * @default ''
+   */
+  desc?: string
+
+  /**
    * 用于指定该 demo 的访问链接，通常在默认渲染的 demo 无法满足展示需要时使用。
    * @default false
    */
-  iframeSrc?: string
+  demoUrl?: string
 
   /**
    * 用于控制 demo 的包裹容器是否设置 transform 的 CSS 值以控制 position: fixed; 的元素相对于 demo 容器定位。
    * @default false
    */
   transform?: boolean
-
-  /**
-   * 用于配置该外部 Demo 的标题，配置后会在 Demo 预览器中显示。
-   * @default ''
-   */
-  title?: string
-
-  /**
-   * 用于配置该外部 Demo 的简介，配置后会在 Demo 预览器中显示，支持 Markdown 语法。
-   * @default ''
-   */
-  desc?: string
 }

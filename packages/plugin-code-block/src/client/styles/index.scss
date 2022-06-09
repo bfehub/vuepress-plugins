@@ -8,6 +8,32 @@
   padding: 40px 24px;
 }
 
+.vmi-previewer-title {
+  position: relative;
+
+  a.header-anchor {
+    position: absolute;
+    top: -11px;
+    left: 16px;
+    padding: 0 8px;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--c-text);
+    background: var(--c-bg);
+    opacity: 1;
+  }
+
+  + .vmi-previewer-desc {
+    padding-top: 6px;
+  }
+}
+
+.vmi-previewer-desc {
+  padding: 0 24px;
+  border-top: 1px dashed var(--c-border);
+}
+
 .vmi-previewer-actions {
   display: flex;
   align-items: center;
