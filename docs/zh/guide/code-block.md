@@ -27,7 +27,6 @@ export interface CodeBlockPluginOptions {
   name: string
   headers: boolean
   config: CodeUserConfig
-  locales: CodeLocaleConfig
 }
 ```
 

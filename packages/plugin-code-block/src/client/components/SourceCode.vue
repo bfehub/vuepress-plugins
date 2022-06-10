@@ -3,6 +3,7 @@
     <div class="vmi-previewer-actions-left">
       <span
         v-if="!hideActions.includes('EXTERNAL')"
+        title="Open demo in new tab"
         class="vmi-previewer-actions-button"
         @click="openIframe"
       >
@@ -10,18 +11,35 @@
       </span>
       <span
         v-if="props.iframe"
+        title="Reload demo iframe page"
         class="vmi-previewer-actions-button"
         @click="refreshIframe"
       >
         <Refresh />
       </span>
+      <span
+        v-if="props.filePath"
+        title="Open demo file in editor"
+        class="vmi-previewer-actions-button"
+        @click="openEditor"
+      >
+        <Edit />
+      </span>
     </div>
     <div class="vmi-previewer-actions-right">
-      <span class="vmi-previewer-actions-button" @click="handleCopy">
+      <span
+        class="vmi-previewer-actions-button"
+        title="Copy source code"
+        @click="handleCopy"
+      >
         <Copy v-show="!state.isCopy" />
         <CopySuccess v-show="state.isCopy" />
       </span>
-      <span class="vmi-previewer-actions-button" @click="handleExpand">
+      <span
+        class="vmi-previewer-actions-button"
+        title="Toggle source code panel"
+        @click="handleExpand"
+      >
         <Expand v-show="!state.isExpand" />
         <UnExpand v-show="state.isExpand" />
       </span>
@@ -54,6 +72,7 @@ import CopySuccess from '../icons/CopySuccess.vue'
 import File from '../icons/File.vue'
 import Open from '../icons/Open.vue'
 import Refresh from '../icons/Refresh.vue'
+import Edit from '../icons/Edit.vue'
 
 /**
  * Props define
@@ -73,6 +92,10 @@ const props = defineProps({
     default: false,
   },
   hideActions: {
+    type: String,
+    default: '',
+  },
+  filePath: {
     type: String,
     default: '',
   },
@@ -140,5 +163,9 @@ const refreshIframe = (e: MouseEvent) => {
     e.target as HTMLElement
   ).parentNode.parentNode.parentNode.parentNode.querySelector('iframe')
   iframe.src = iframe.getAttribute('src')
+}
+
+const openEditor = () => {
+  fetch(`/__open-in-editor?file=${props.filePath}`)
 }
 </script>

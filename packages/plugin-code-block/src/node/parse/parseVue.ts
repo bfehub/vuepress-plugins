@@ -69,6 +69,7 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
         iframeSrc,
         defaultShowCode: dep.compAttrs.defaultShowCode,
         hideActions: dep.compAttrs.hideActions as unknown as string,
+        filePath: app.env.isDev ? dep.compPath : '',
       },
       content: sources.map((source) => {
         return {
