@@ -3,7 +3,12 @@ import type { Plugin } from '@vuepress/core'
 import type { CodeUserConfig, CodeLocaleConfig } from '../shared'
 import { createPageCodeDepsHelper } from './utils'
 import { prepareVmiComponents } from './prepare'
-import { resolveOptions, resolveHtmlBlock, resolveScriptSetup } from './resolve'
+import {
+  resolveOptions,
+  resolveHtmlBlock,
+  resolveScriptSetup,
+  resolvePageHeaders,
+} from './resolve'
 import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins'
 
 /**
@@ -11,6 +16,7 @@ import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins'
  */
 export interface CodeBlockPluginOptions {
   name: string
+  headers: boolean
   config: CodeUserConfig
   locales: CodeLocaleConfig
 }
@@ -33,6 +39,7 @@ export const codeBlockPlugin = (
 
     async extendsPage(page, app) {
       resolveScriptSetup(page, store)
+      resolvePageHeaders(page, store, options.headers)
       app.pages && (await prepareVmiComponents(app, store))
     },
 

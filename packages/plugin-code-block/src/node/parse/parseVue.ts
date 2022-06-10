@@ -1,6 +1,7 @@
 import type { App } from '@vuepress/core'
 import type { Node } from 'posthtml-parser'
 import type { PageCodeDep } from '../utils'
+import { slugify } from '@vuepress/markdown'
 import { readSource } from './readSource'
 import { markdownText } from '../utils/highlight'
 
@@ -36,13 +37,14 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
       ? {
           tag: 'div',
           attrs: {
+            id: slugify(dep.compAttrs.title),
             class: 'vmi-previewer-title',
           },
           content: [
             {
               tag: 'a',
               attrs: {
-                href: `#${dep.compAttrs.title}`,
+                href: `#${slugify(dep.compAttrs.title)}`,
                 class: 'header-anchor',
               },
               content: dep.compAttrs.title,

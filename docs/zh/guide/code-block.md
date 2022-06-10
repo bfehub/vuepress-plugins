@@ -1,3 +1,7 @@
+---
+headers: false
+---
+
 # 组件演示
 
 在开发组件的时候提供组件效果的演示，以下展示的组件全部来自 `element-plus` 的使用示例。
@@ -21,6 +25,7 @@ module.exports = {
 ```js
 export interface CodeBlockPluginOptions {
   name: string
+  headers: boolean
   config: CodeUserConfig
   locales: CodeLocaleConfig
 }
@@ -34,6 +39,16 @@ export interface CodeBlockPluginOptions {
 <demo src="xxx.vue"></demo>
 <!-- 如果改成 name = 'code' -->
 <code src="xxx.vue"></code>
+```
+
+### headers
+
+使用 `demo` 的 `title` 属性覆盖页面的导航菜单，默认 `false`。可以通过页面的 `frontmatter` 的 `headers` 配置覆盖全局配置。
+
+```yaml
+---
+headers: true
+---
 ```
 
 ### config
@@ -113,24 +128,24 @@ export interface CodeUserConfig {
 用于配置 `demo` 的标题，配置后会在 `demo` 预览器中显示。
 
 ```html
-<demo src="./demos/demo-basic.vue" title="这是标题"></demo>
+<demo src="./demos/demo-title.vue" title="这是标题"></demo>
 ```
 
 渲染效果如下
 
-<demo src="./demos/demo-basic.vue" title="这是标题"></demo>
+<demo src="./demos/demo-title.vue" title="这是标题"></demo>
 
 ### desc
 
 用于配置 `demo` 的简介，配置后会在 `demo` 预览器中显示，支持 `Markdown` 语法。
 
 ```html
-<demo src="./demos/demo-basic.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
+<demo src="./demos/demo-desc.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
 ```
 
 渲染效果如下
 
-<demo src="./demos/demo-basic.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
+<demo src="./demos/demo-desc.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
 
 ### demoUrl
 

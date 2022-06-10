@@ -21,6 +21,7 @@ export const DEFAULT_LOCALE_OPTIONS: CodeLocaleConfig = {
  */
 export const resolveOptions = ({
   name = 'demo',
+  headers = false,
   config = {},
   locales = {},
 }: Partial<CodeBlockPluginOptions>): CodeBlockPluginOptions => {
@@ -44,6 +45,7 @@ export const resolveOptions = ({
 
   return {
     name,
+    headers,
     config,
     locales,
   }
