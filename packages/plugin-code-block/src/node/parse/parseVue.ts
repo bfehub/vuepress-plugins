@@ -16,6 +16,10 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
     ? dep.compAttrs.demoUrl
     : `${app.options.base}-iframe.html#/${dep.compAttrs.id}`
 
+  const isShowDebugStyle =
+    Reflect.has(dep.compAttrs, 'debug') ||
+    Reflect.has(dep.compAttrs, 'data-debug')
+
   node.tag = 'VmiPreviewer'
   node.attrs = {}
   node.content = [
@@ -83,6 +87,10 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
       }),
     },
   ]
+
+  if (isShowDebugStyle) {
+    node.attrs['data-debug'] = true
+  }
 
   return node
 }

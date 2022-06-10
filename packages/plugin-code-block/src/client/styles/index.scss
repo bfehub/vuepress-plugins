@@ -2,6 +2,26 @@
   background-color: var(--c-bg);
   border: 1px solid var(--c-border);
   border-radius: 1px;
+
+  &[data-debug] {
+    margin-top: 32px;
+    border-color: #ffcb00;
+
+    &::before {
+      float: left;
+      padding: 3px 6px;
+      margin-top: -18px;
+      margin-left: -1px;
+      font-size: 12px;
+      line-height: 1;
+      color: #735600;
+      text-shadow: 0.5px 0.5px 0 hsl(0deg 0% 100% / 50%);
+      content: 'DEV ONLY';
+      background-color: #ffcb00;
+      border-top-left-radius: 1px;
+      border-top-right-radius: 1px;
+    }
+  }
 }
 
 .vmi-previewer-example {
@@ -71,10 +91,10 @@
   div[class*='language-'] {
     border-radius: 0;
   }
-}
 
-.vmi-previewer-source-item {
-  overflow: auto;
+  &-item {
+    overflow: auto;
+  }
 }
 
 .vmi-previewer-tabs {

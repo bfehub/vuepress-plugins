@@ -87,6 +87,12 @@ export interface CodeNodeConfig extends CodeUserConfig {
   iframe?: boolean | number
 
   /**
+   * 标记当前 demo 为调试 demo，这意味着在生产模式下该 demo 是不可见的；另外，调试 demo 在开发环境下也会展示一个 DEV ONLY 的标记，以便开发者将其和其他 demo 区分开来。
+   * @default false
+   */
+  debug?: boolean
+
+  /**
    * 用于配置 demo 的标题，配置后会在 demo 预览器中显示。
    * @default ''
    */

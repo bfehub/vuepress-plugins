@@ -42,6 +42,8 @@ export const parseCodeBlock = (
 
     const isRaw = Reflect.has(props, 'raw')
     const isInline = Reflect.has(props, 'inline')
+    const isDebug = Reflect.has(props, 'debug')
+    const isBuild = app.env.isBuild
     const isVueCode = /^\.(vue|jsx|tsx)$/.test(path.extname(props.src))
 
     const dep = {} as PageCodeDep
@@ -55,6 +57,11 @@ export const parseCodeBlock = (
 
     props.id = dep.compHash
     props.src = dep.compPath
+
+    if (isDebug && isBuild) {
+      html[i] = ''
+      continue
+    }
 
     if (isInline && isVueCode) {
       html[i] = parseInline(node, dep)

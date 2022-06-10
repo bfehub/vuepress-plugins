@@ -1,5 +1,5 @@
 <template>
-  <div class="vmi-previewer-source-item">
+  <div class="vmi-previewer-sources-item">
     <slot></slot>
   </div>
 </template>

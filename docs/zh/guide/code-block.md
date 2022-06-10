@@ -120,6 +120,20 @@ export interface CodeUserConfig {
 
 <demo src="./demos/demo-iframe.vue" iframe></demo>
 
+### debug
+
+标记当前 `demo` 为调试 `demo`，这意味着在生产模式下该 `demo` 是不可见的；另外，调试 `demo` 在开发环境下也会展示一个 `DEV ONLY` 的标记，以便开发者将其和其他 `demo` 区分开来。
+
+```html
+<demo src="./demos/demo-debug.vue" debug></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-debug.vue" debug></demo>
+
+<demo src="./demos/demo-debug.vue" data-debug></demo>
+
 ## 控制渲染
 
 ### title
