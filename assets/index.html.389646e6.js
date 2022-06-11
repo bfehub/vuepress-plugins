@@ -1,0 +1,1 @@
+const e={key:"v-95f2bb02",path:"/zh/components/npm-badge/",title:"NpmBadge",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"Basic",slug:"basic",children:[]}],git:{updatedTime:1654932416e3,contributors:[{name:"haiweilian",email:"haiweilian@foxmail.com",commits:1}]},filePathRelative:"zh/components/npm-badge/index.md"};export{e as data};

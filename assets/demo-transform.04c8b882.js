@@ -1,0 +1,1 @@
+import{J as e,K as t,L as o}from"./clientConfigs.e0cabf07.js";const r={},n={style:{position:"fixed",top:0,left:0}};function s(c,_){return t(),o("button",n,"\u6211\u4E0D\u4F1A\u98DE\u51FA\u53BB")}var f=e(r,[["render",s],["__file","demo-transform.vue"]]);export{f as default};
