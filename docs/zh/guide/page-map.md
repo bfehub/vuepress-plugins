@@ -19,6 +19,12 @@
 │   │   │       └── npm-badge.vue
 ```
 
+以上组件的文档的 _访问路径_ 和 _临时文件_ 的路径就会被转换成。
+
+`/path/packages/components/npm-badge/docs/index.md` => `/components/npm-badge/index.md`
+
+`/path/packages/components/npm-badge/docs/index.zh-CN.md` => `/zh/components/npm-badge/index.md`
+
 ## 使用
 
 ```sh
@@ -43,7 +49,7 @@ export interface PageMapPluginOptions {
   patterns: string[]
 
   /**
-   * 自定义路径替换
+   * 自定义路径规则
    */
   pathMapRule: (path: string) => string
 }
@@ -51,47 +57,51 @@ export interface PageMapPluginOptions {
 
 ### 查找范围
 
-定义查找文件的路径从 `vuepress` 根配置开启，默认配置如下。
+定义查找文件的路径从 `vuepress` 根配置开启，默认配置从 `docs` 目录时如下。
 
 ```js
-patterns: [
-  '../src/**/*.md',
-  '../packages/**/*.md',
-  '!../src/**/node_modules',
-  '!../packages/**/node_modules',
-],
+pageMapPlugin({
+  patterns: [
+    '../src/**/*.md',
+    '../packages/**/*.md',
+    '!../src/**/node_modules',
+    '!../packages/**/node_modules',
+  ],
+})
 ```
 
 ### 路径处理
 
-统一的路径映射处理，只需处理到想要的路径即可，多语言在内部处理。
+统一的路径映射处理，只需处理到想要的路径即可，多语言在内部处理，默认配置如下。
 
 ```js
-pathMapRule(path: string) {
-  const paths = path.split('/')
-  const len = paths.length
+pageMapPlugin({
+  pathMapRule(path) {
+    const paths = path.split('/')
+    const len = paths.length
 
-  // /User/project/path/button/index.md
-  // -> components/button/index.md
+    // /User/project/path/npm-badge/index.md
+    // -> components/npm-badge/index.md
 
-  // /User/project/path/button/index.zh-CN.md
-  // -> components/button/index.zh-CN.md
+    // /User/project/path/npm-badge/index.zh-CN.md
+    // -> components/npm-badge/index.zh-CN.md
 
-  // /User/project/path/button/docs/index.md
-  // -> components/button/index.md
+    // /User/project/path/npm-badge/docs/index.md
+    // -> components/npm-badge/index.md
 
-  // /User/project/path/button/docs/index.zh-CN.md
-  // -> components/button/index.zh-CN.md
+    // /User/project/path/npm-badge/docs/index.zh-CN.md
+    // -> components/npm-badge/index.zh-CN.md
 
-  return `components/${
-    paths[len - 2] === 'docs' ? paths[len - 3] : paths[len - 2]
-  }/${paths[len - 1]}`
-}
+    return `components/${
+      paths[len - 2] === 'docs' ? paths[len - 3] : paths[len - 2]
+    }/${paths[len - 1]}`
+  },
+})
 ```
 
 ## 多语言规则
 
-支持多语言的路径映射，如配置了 `locales`。
+支持多语言的路径映射，如配置了 `locales` 配置。
 
 ```js
 locales: {
@@ -105,10 +115,42 @@ locales: {
 },
 ```
 
-文件的名称加上对应 `lang` 的名称，会在最终路径前缀加上上语言的路径。
+文件的名称加上对应 `lang` 的名称，会在最终路径前缀加上语言的路径。
 
-`components/button/index.md` -> `/components/button/index.md`
+`components/npm-badge/index.md` -> `/components/npm-badge/index.md`
 
-`components/button/index.en-US.md` -> `/components/button/index.md`
+`components/npm-badge/index.en-US.md` -> `/components/npm-badge/index.md`
 
-`components/button/index.zh-CN.md` -> `/zh/components/button/index.md`
+`components/npm-badge/index.zh-CN.md` -> `/zh/components/npm-badge/index.md`
+
+然后可以在 `sidebar` 配置中这样使用。
+
+```js
+export const en = {
+  '/components/': [
+    {
+      text: 'Intro',
+      children: ['/components/README.md'],
+    },
+    {
+      text: 'Components',
+      children: ['/components/npm-badge/index.md'],
+    },
+  ],
+}
+```
+
+```js
+export const zh = {
+  '/zh/components/': [
+    {
+      text: '指引',
+      children: ['/zh/components/README.md'],
+    },
+    {
+      text: '组件',
+      children: ['/zh/components/npm-badge/index.md'],
+    },
+  ],
+}
+```

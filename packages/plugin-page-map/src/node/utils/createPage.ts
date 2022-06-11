@@ -8,8 +8,8 @@ export const createPage = async (
   options: PageMapPluginOptions,
   filePath: string
 ): Promise<Page> => {
-  // components/button/index.md
-  // components/button/index.zh-CN.md
+  // components/npm-badge/index.md
+  // components/npm-badge/index.zh-CN.md
   const pathMap = options.pathMapRule(filePath)
 
   // index.md
@@ -33,8 +33,8 @@ export const createPage = async (
     }
   })
 
-  // components/button/index.md -> components/button/index.md
-  // components/button/index.zh-CN.md -> zh/components/button/index.md
+  // components/npm-badge/index.md -> /components/npm-badge/index.md
+  // components/npm-badge/index.zh-CN.md -> /zh/components/npm-badge/index.md
   const relativePath = `${langPrefix}${
     lang ? pathMap.replace(`.${lang}`, '') : pathMap
   }`.slice(1)

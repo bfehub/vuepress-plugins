@@ -19,17 +19,17 @@ export const resolveOptions = (
         const paths = path.split('/')
         const len = paths.length
 
-        // /User/project/path/button/index.md
-        // -> components/button/index.md
+        // /User/project/path/npm-badge/index.md
+        // -> components/npm-badge/index.md
 
-        // /User/project/path/button/index.zh-CN.md
-        // -> components/button/index.zh-CN.md
+        // /User/project/path/npm-badge/index.zh-CN.md
+        // -> components/npm-badge/index.zh-CN.md
 
-        // /User/project/path/button/docs/index.md
-        // -> components/button/index.md
+        // /User/project/path/npm-badge/docs/index.md
+        // -> components/npm-badge/index.md
 
-        // /User/project/path/button/docs/index.zh-CN.md
-        // -> components/button/index.zh-CN.md
+        // /User/project/path/npm-badge/docs/index.zh-CN.md
+        // -> components/npm-badge/index.zh-CN.md
 
         return `components/${
           paths[len - 2] === 'docs' ? paths[len - 3] : paths[len - 2]
