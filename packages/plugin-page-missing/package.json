@@ -1,0 +1,30 @@
+{
+  "name": "@bfehub/vuepress-plugin-page-missing",
+  "version": "1.0.0",
+  "description": "VuePress plugin - page-missing",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "vuepress-plugin",
+    "vuepress",
+    "plugin",
+    "page-missing"
+  ],
+  "license": "MIT",
+  "author": "haiweilian",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "homepage": "https://github.com/bfehub/vmi",
+  "scripts": {
+    "build": "tsc -b tsconfig.build.json",
+    "clean": "rimraf lib *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@vuepress/core": "^2.0.0-beta.47",
+    "@vuepress/utils": "^2.0.0-beta.47"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
