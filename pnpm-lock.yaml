@@ -45,6 +45,7 @@ importers:
       '@bfehub/vuepress-components': workspace:*
       '@bfehub/vuepress-plugin-code-block': workspace:*
       '@bfehub/vuepress-plugin-page-map': workspace:*
+      '@bfehub/vuepress-plugin-page-missing': workspace:*
       '@bfehub/vuepress-theme-vmi': workspace:*
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-search': 2.0.0-beta.47
@@ -57,6 +58,7 @@ importers:
       '@bfehub/vuepress-components': link:../packages/components
       '@bfehub/vuepress-plugin-code-block': link:../packages/plugin-code-block
       '@bfehub/vuepress-plugin-page-map': link:../packages/plugin-page-map
+      '@bfehub/vuepress-plugin-page-missing': link:../packages/plugin-page-missing
       '@bfehub/vuepress-theme-vmi': link:../packages/theme-vmi
       '@vuepress/client': 2.0.0-beta.47
       '@vuepress/plugin-search': 2.0.0-beta.47
@@ -118,6 +120,14 @@ importers:
       '@vuepress/core': 2.0.0-beta.47
       '@vuepress/utils': 2.0.0-beta.47
       chokidar: 3.5.3
+
+  packages/plugin-page-missing:
+    specifiers:
+      '@vuepress/core': ^2.0.0-beta.47
+      '@vuepress/utils': ^2.0.0-beta.47
+    dependencies:
+      '@vuepress/core': 2.0.0-beta.47
+      '@vuepress/utils': 2.0.0-beta.47
 
   packages/theme-vmi:
     specifiers:

@@ -6,8 +6,9 @@ export const zh: SidebarConfig = {
       text: '指南',
       children: [
         '/zh/guide/README.md',
-        '/zh/guide/page-map.md',
         '/zh/guide/code-block.md',
+        '/zh/guide/page-map.md',
+        '/zh/guide/page-missing.md',
         '/zh/guide/theme-vmi.md',
       ],
     },

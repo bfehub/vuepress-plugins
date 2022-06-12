@@ -6,7 +6,7 @@ headers: false
 
 在开发组件的时候提供组件效果的演示，以下展示的组件全部来自 `element-plus` 的使用示例。
 
-## 使用
+## 安装
 
 ```sh
 npm i -D @bfehub/vuepress-plugin-code-block
@@ -153,7 +153,11 @@ export interface CodeUserConfig {
 用于配置 `demo` 的简介，配置后会在 `demo` 预览器中显示，支持 `Markdown` 语法。
 
 ```html
-<demo src="./demos/demo-desc.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
+<demo
+  src="./demos/demo-desc.vue"
+  title="这是简介标题"
+  desc="这是 `demo` 的简介。"
+></demo>
 ```
 
 渲染效果如下
@@ -165,7 +169,11 @@ export interface CodeUserConfig {
 用于指定该 `demo` 的访问链接，通常在默认渲染的 `demo` 无法满足展示需要时使用。
 
 ```html
-<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
+<demo
+  src="./demos/demo-iframe.vue"
+  iframe="200"
+  demoUrl="https://v2.vuepress.vuejs.org/zh/"
+></demo>
 ```
 
 渲染效果如下

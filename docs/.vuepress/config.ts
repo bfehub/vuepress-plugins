@@ -1,6 +1,7 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@bfehub/vuepress-theme-vmi'
 import { pageMapPlugin } from '@bfehub/vuepress-plugin-page-map'
+import { pageMissingPlugin } from '@bfehub/vuepress-plugin-page-missing'
 import { codeBlockPlugin } from '@bfehub/vuepress-plugin-code-block'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { navbar, sidebar } from './configs'
@@ -47,6 +48,9 @@ export default defineUserConfig({
   plugins: [
     // @bfehub/vuepress-plugin-page-map
     pageMapPlugin(),
+
+    // @bfehub/vuepress-plugin-page-missing
+    pageMissingPlugin(),
 
     // @bfehub/vuepress-plugin-code-block
     codeBlockPlugin(),
