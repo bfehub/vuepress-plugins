@@ -32,6 +32,11 @@ export interface PageCodeDep {
  */
 export interface PageCodeDepsHelper {
   /**
+   * Get all code's that depend on the `pagePath`
+   */
+  get: (path: string) => PageCodeDep[]
+
+  /**
    * Handle deps when adding a code
    */
   add: (code: PageCodeDep) => void
@@ -40,11 +45,6 @@ export interface PageCodeDepsHelper {
    * Handle deps when removing a code
    */
   remove: (code: PageCodeDep) => void
-
-  /**
-   * Get all code's that depend on the `pagePath`
-   */
-  get: (path: string) => PageCodeDep[]
 }
 
 /**
