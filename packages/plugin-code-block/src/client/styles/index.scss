@@ -137,3 +137,27 @@
     transition: left 0.2s, width 0.2s;
   }
 }
+
+@media (min-width: 1000px) {
+  .vmi-previewer-horizontal {
+    display: flex;
+
+    .vmi-previewer-example {
+      width: 300px;
+
+      > iframe {
+        height: 100%;
+      }
+    }
+
+    .vmi-previewer-content {
+      flex: 1;
+      overflow: auto;
+      border-left: 1px dashed var(--c-border);
+    }
+
+    .vmi-previewer-actions {
+      border-top: 0;
+    }
+  }
+}

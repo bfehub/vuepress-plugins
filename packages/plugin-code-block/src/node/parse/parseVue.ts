@@ -21,7 +21,9 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
     Reflect.has(dep.compAttrs, 'data-debug')
 
   node.tag = 'VmiPreviewer'
-  node.attrs = {}
+  node.attrs = {
+    direction: dep.compAttrs.direction,
+  }
   node.content = [
     {
       tag: 'VmiExample',
@@ -37,54 +39,62 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
         },
       ],
     },
-    dep.compAttrs.title
-      ? {
-          tag: 'div',
-          attrs: {
-            id: slugify(dep.compAttrs.title),
-            class: 'vmi-previewer-title',
-          },
-          content: [
-            {
-              tag: 'a',
-              attrs: {
-                href: `#${slugify(dep.compAttrs.title)}`,
-                class: 'header-anchor',
-              },
-              content: dep.compAttrs.title,
-            },
-          ],
-        }
-      : null,
-    dep.compAttrs.desc
-      ? {
-          tag: 'div',
-          attrs: {
-            class: 'vmi-previewer-desc',
-          },
-          content: markdownText(dep.compAttrs.desc),
-        }
-      : null,
     {
-      tag: 'VmiSourceCode',
+      tag: 'div',
       attrs: {
-        id: dep.compAttrs.id,
-        iframe: dep.compAttrs.iframe,
-        iframeSrc,
-        defaultShowCode: dep.compAttrs.defaultShowCode,
-        hideActions: dep.compAttrs.hideActions as unknown as string,
-        filePath: app.env.isDev ? dep.compPath : '',
+        class: 'vmi-previewer-content',
       },
-      content: sources.map((source) => {
-        return {
-          tag: 'VmiSourceCodeItem',
+      content: [
+        dep.compAttrs.title
+          ? {
+              tag: 'div',
+              attrs: {
+                id: slugify(dep.compAttrs.title),
+                class: 'vmi-previewer-title',
+              },
+              content: [
+                {
+                  tag: 'a',
+                  attrs: {
+                    href: `#${slugify(dep.compAttrs.title)}`,
+                    class: 'header-anchor',
+                  },
+                  content: dep.compAttrs.title,
+                },
+              ],
+            }
+          : null,
+        dep.compAttrs.desc
+          ? {
+              tag: 'div',
+              attrs: {
+                class: 'vmi-previewer-desc',
+              },
+              content: markdownText(dep.compAttrs.desc),
+            }
+          : null,
+        {
+          tag: 'VmiSourceCode',
           attrs: {
-            name: source.name,
-            rawCode: encodeURIComponent(source.rawCode),
+            id: dep.compAttrs.id,
+            iframe: dep.compAttrs.iframe,
+            iframeSrc,
+            defaultShowCode: dep.compAttrs.defaultShowCode,
+            hideActions: dep.compAttrs.hideActions as unknown as string,
+            filePath: app.env.isDev ? dep.compPath : '',
           },
-          content: source.highlightCode,
-        }
-      }),
+          content: sources.map((source) => {
+            return {
+              tag: 'VmiSourceCodeItem',
+              attrs: {
+                name: source.name,
+                rawCode: encodeURIComponent(source.rawCode),
+              },
+              content: source.highlightCode,
+            }
+          }),
+        },
+      ],
     },
   ]
 

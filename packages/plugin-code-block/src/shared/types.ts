@@ -54,6 +54,12 @@ export interface CodeUserConfig {
    * @default false
    */
   defaultShowCode?: boolean
+
+  /**
+   * 用户控制 Demo 的排列方向
+   * @default 'vertical'
+   */
+  direction?: 'vertical' | 'horizontal'
 }
 
 export interface CodeNodeConfig extends CodeUserConfig {

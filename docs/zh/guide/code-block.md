@@ -67,6 +67,12 @@ export interface CodeUserConfig {
    * @default false
    */
   defaultShowCode?: boolean
+
+  /**
+   * 用户控制 Demo 的排列方向
+   * @default 'vertical'
+   */
+  direction?: 'vertical' | 'horizontal'
 }
 ```
 
@@ -153,11 +159,7 @@ export interface CodeUserConfig {
 用于配置 `demo` 的简介，配置后会在 `demo` 预览器中显示，支持 `Markdown` 语法。
 
 ```html
-<demo
-  src="./demos/demo-desc.vue"
-  title="这是简介标题"
-  desc="这是 `demo` 的简介。"
-></demo>
+<demo src="./demos/demo-desc.vue" title="这是简介标题" desc="这是 `demo` 的简介。"></demo>
 ```
 
 渲染效果如下
@@ -169,11 +171,7 @@ export interface CodeUserConfig {
 用于指定该 `demo` 的访问链接，通常在默认渲染的 `demo` 无法满足展示需要时使用。
 
 ```html
-<demo
-  src="./demos/demo-iframe.vue"
-  iframe="200"
-  demoUrl="https://v2.vuepress.vuejs.org/zh/"
-></demo>
+<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
 ```
 
 渲染效果如下
@@ -218,6 +216,18 @@ export interface CodeUserConfig {
 渲染效果如下
 
 <demo src="./demos/demo-basic.vue" defaultShowCode></demo>
+
+### direction
+
+用户控制 `demo` 的排列方向，可选值有 `horizontal` 水平排列，可以用来展示移动端组件。
+
+```html
+<demo src="./demos/demo-basic.vue" direction="horizontal" defaultShowCode></demo>
+```
+
+渲染效果如下
+
+<demo src="./demos/demo-basic.vue" direction="horizontal" defaultShowCode></demo>
 
 ## 其他特性
 
