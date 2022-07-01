@@ -1,6 +1,6 @@
 {
   "name": "@bfehub/vuepress-theme-vmi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Vmi theme of VuePress",
   "files": [
     "lib",
