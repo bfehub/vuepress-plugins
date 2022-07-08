@@ -2,14 +2,14 @@ import { path } from '@vuepress/utils'
 import type { Plugin } from '@vuepress/core'
 import type { CodeUserConfig, CodeLocaleConfig } from '../shared'
 import { createPageCodeDepsHelper } from './utils'
-import { prepareVmiComponents } from './prepare'
+import { prepareClientIframe, prepareVmiComponents } from './prepare'
+import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins'
 import {
   resolveOptions,
   resolveHtmlBlock,
   resolveScriptSetup,
   resolvePageHeaders,
 } from './resolve'
-import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins'
 
 /**
  * Options of @bfehub/vuepress-plugin-code-block
@@ -44,6 +44,7 @@ export const codeBlockPlugin = (
     },
 
     async onInitialized(app) {
+      await prepareClientIframe(app)
       await prepareVmiComponents(app, store)
     },
 

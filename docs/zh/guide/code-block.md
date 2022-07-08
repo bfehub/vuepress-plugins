@@ -260,3 +260,34 @@ export interface CodeUserConfig {
 渲染效果如下
 
 <demo src="./demos/demo-tabs.vue"></demo>
+
+### 客户端配置文件(iframe)
+
+如果想往 `iframe` 页面单独添加一些客户端代码，需要说明的是 `iframe` 默认包含所有的客户端配置文件。
+
+比如像 `vuepress` 的 [客户端配置文件](https://v2.vuepress.vuejs.org/zh/guide/configuration.html#%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6) 一样，那么往 `iframe` 中添加也有一个约定的文件，这个文件的配置与默认的一样。
+
+关于客户端配置文件的路径约定（按照优先顺序）：
+
+- 当前工作目录 `cwd` 下：
+
+  - `vuepress.client-iframe.ts`
+  - `vuepress.client-iframe.js`
+  - `vuepress.client-iframe.mjs`
+
+- 源文件目录 `sourceDir` 下：
+  - `.vuepress/client-iframe.ts`
+  - `.vuepress/client-iframe.js`
+  - `.vuepress/client-iframe.mjs`
+
+需要注意的是，客户端配置文件需要使用 ESM 格式：
+
+```ts
+import { defineClientConfig } from '@vuepress/client'
+
+export default defineClientConfig({
+  enhance({ app, router, siteData }) {},
+  setup() {},
+  rootComponents: [],
+})
+```

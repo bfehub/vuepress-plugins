@@ -1,4 +1,5 @@
 import { clientConfigs } from '@internal/clientConfigs'
+import { clientIframeConfigs } from '@internal/clientIframeConfigs'
 import { createApp, h } from 'vue'
 import { RouterView } from 'vue-router'
 import type { CreateVueAppFunction } from '@vuepress/client'
@@ -12,15 +13,17 @@ export const createVueApp: CreateVueAppFunction = async () => {
 
     setup() {
       // invoke all client setup
-      // for (const clientConfig of clientConfigs) {
-      //   clientConfig.setup?.()
-      // }
+      for (const clientConfig of clientIframeConfigs) {
+        clientConfig.setup?.()
+      }
 
       return () => [
         h(RouterView),
-        ...clientConfigs.flatMap(({ rootComponents = [] }) =>
-          rootComponents.map((component) => h(component))
-        ),
+        ...clientConfigs
+          .concat(clientIframeConfigs)
+          .flatMap(({ rootComponents = [] }) =>
+            rootComponents.map((component) => h(component))
+          ),
       ]
     },
   })
@@ -34,7 +37,7 @@ export const createVueApp: CreateVueAppFunction = async () => {
   // }
 
   // invoke all client enhance
-  for (const clientConfig of clientConfigs) {
+  for (const clientConfig of clientConfigs.concat(clientIframeConfigs)) {
     await clientConfig.enhance?.({ app, router, siteData })
   }
 
