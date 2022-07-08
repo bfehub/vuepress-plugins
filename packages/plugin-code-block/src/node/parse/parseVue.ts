@@ -89,8 +89,8 @@ export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
               attrs: {
                 name: source.name,
                 rawCode: encodeURIComponent(source.rawCode),
+                highlightCode: encodeURIComponent(source.highlightCode),
               },
-              content: source.highlightCode,
             }
           }),
         },

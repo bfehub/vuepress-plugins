@@ -33,7 +33,7 @@ export const vitePageIframe = (app: App): Plugin => {
             /<\/body>/,
             `\
 <script type="module">
-import '@bfehub/vuepress-plugin-code-block/src/client-iframe/app'
+import '@bfehub/vuepress-plugin-code-block/lib/client-iframe/app'
 </script>
 </body>`
           )

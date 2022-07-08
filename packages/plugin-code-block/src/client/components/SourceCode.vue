@@ -46,9 +46,9 @@
     </div>
   </div>
   <div v-show="state.isExpand" class="vmi-previewer-sources">
-    <div v-if="components.length > 1" class="vmi-previewer-tabs">
+    <div v-if="$slots.default?.().length > 1" class="vmi-previewer-tabs">
       <div
-        v-for="(component, index) of components"
+        v-for="(component, index) of $slots.default?.()"
         :key="index"
         :class="{ active: state.active === index }"
         class="vmi-previewer-tabs-tab"
@@ -58,7 +58,7 @@
         <span>{{ component.props.name }}</span>
       </div>
     </div>
-    <component :is="components[state.active]" :key="state.active"></component>
+    <component :is="$slots.default?.()[state.active]"></component>
   </div>
 </template>
 
@@ -102,6 +102,11 @@ const props = defineProps({
 })
 
 /**
+ * Get slots
+ */
+const slots = useSlots()
+
+/**
  * Parse props
  */
 const hideActions = ref<string[]>([])
@@ -110,12 +115,6 @@ try {
     hideActions.value = JSON.parse(props.hideActions)
   }
 } catch (error) {}
-
-/**
- * Get slots
- */
-const slots = useSlots()
-const components = slots.default()
 
 /**
  * Code status
@@ -140,6 +139,7 @@ const handleTabClick = (index) => {
 const rawCode = ref('')
 const { copy } = useClipboard({ source: rawCode })
 const handleCopy = async () => {
+  const components = slots.default()
   rawCode.value = decodeURIComponent(components[state.active].props.rawCode)
 
   await copy()

@@ -5,7 +5,11 @@ export const parseNodeAttrs = (
   attrs: Record<string, any>
 ) => {
   Object.keys(config).forEach((key) => {
-    attrs[key] = JSON.stringify(config[key])
+    if (typeof config[key] === 'string') {
+      attrs[key] = config[key]
+    } else {
+      attrs[key] = JSON.stringify(config[key])
+    }
   })
 
   Object.keys(attrs).forEach((key) => {
