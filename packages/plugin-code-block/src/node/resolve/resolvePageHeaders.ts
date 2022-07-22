@@ -1,7 +1,7 @@
 import type { Page } from '@vuepress/core'
 import type { PageHeader } from '@vuepress/shared'
 import type { PageCodeDepsHelper } from '../utils'
-import { vuepressSlugify as slugify } from '@vuepress/markdown'
+import { slugify } from '@mdit-vue/shared'
 
 export const resolvePageHeaders = (
   page: Page,

@@ -1,6 +1,6 @@
 {
   "name": "@bfehub/vuepress-plugin-page-map",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "VuePress plugin - page-map",
   "files": [
     "lib"
@@ -21,8 +21,8 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@vuepress/core": "^2.0.0-beta.48",
-    "@vuepress/utils": "^2.0.0-beta.48",
+    "@vuepress/core": "^2.0.0-beta.49",
+    "@vuepress/utils": "^2.0.0-beta.49",
     "chokidar": "^3.5.3"
   },
   "publishConfig": {

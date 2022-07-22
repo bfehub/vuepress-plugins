@@ -9,7 +9,7 @@ export const resolveScriptSetup = (page: Page, store: PageCodeDepsHelper) => {
 
   let i = 0
   let original = ''
-  for (const tag of page.hoistedTags) {
+  for (const tag of page.sfcBlocks) {
     if (tag.trim().startsWith('<script')) {
       original = tag.match(scriptRegExp)?.[3] ?? ''
       break
@@ -18,7 +18,7 @@ export const resolveScriptSetup = (page: Page, store: PageCodeDepsHelper) => {
     i++
   }
 
-  page.hoistedTags[i] = combineScriptSetup(deps, original)
+  page.sfcBlocks[i] = combineScriptSetup(deps, original)
 }
 
 export const combineScriptSetup = (deps: PageCodeDep[], original: string) => {

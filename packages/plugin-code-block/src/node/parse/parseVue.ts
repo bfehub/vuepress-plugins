@@ -1,7 +1,7 @@
 import type { App } from '@vuepress/core'
 import type { Node } from 'posthtml-parser'
 import type { PageCodeDep } from '../utils'
-import { vuepressSlugify as slugify } from '@vuepress/markdown'
+import { slugify } from '@mdit-vue/shared'
 import { readSource } from './readSource'
 import { markdownText } from '../utils/highlight'
 
