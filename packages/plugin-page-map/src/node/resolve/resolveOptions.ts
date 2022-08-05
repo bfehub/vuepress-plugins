@@ -8,12 +8,7 @@ export const resolveOptions = (
 ): PageMapPluginOptions => {
   return Object.assign(
     {
-      patterns: [
-        '../src/**/*.md',
-        '../packages/**/*.md',
-        '!../src/**/node_modules',
-        '!../packages/**/node_modules',
-      ],
+      patterns: [],
 
       pathMapRule(path: string) {
         const paths = path.split('/')

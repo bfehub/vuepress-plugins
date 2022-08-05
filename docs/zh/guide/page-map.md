@@ -124,10 +124,8 @@ export interface PageMapPluginOptions {
 ```js
 pageMapPlugin({
   patterns: [
-    '../src/**/*.md',
-    '../packages/**/*.md',
-    '!../src/**/node_modules',
-    '!../packages/**/node_modules',
+    `${path.resolve(process.cwd(), '../packages/**/*.md')}`,
+    `!${path.resolve(process.cwd(), '../packages/**/node_modules')}`,
   ],
 })
 ```

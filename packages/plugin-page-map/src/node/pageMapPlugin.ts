@@ -1,6 +1,7 @@
 import type { Plugin } from '@vuepress/core'
 import { resolveOptions, resolvePages } from './resolve'
-import { watchPageFiles } from './watch'
+import { watchPageFiles } from './dev'
+import { vitePageHMR } from './plugins'
 
 /**
  * Options of @bfehub/vuepress-plugin-page-map
@@ -25,12 +26,22 @@ export const pageMapPlugin = (
   return {
     name: '@bfehub/vuepress-plugin-page-map',
 
+    multiple: true,
+
     async onInitialized(app) {
       app.pages.push(...(await resolvePages(app, options)))
     },
 
     onWatched: (app, watchers) => {
       watchers.push(...watchPageFiles(app, options))
+    },
+
+    extendsBundlerOptions(bundlerOptions, app) {
+      if (app.options.bundler.name === '@vuepress/bundler-vite') {
+        bundlerOptions.viteOptions ??= {}
+        bundlerOptions.viteOptions.plugins ??= []
+        bundlerOptions.viteOptions.plugins.push(vitePageHMR(app))
+      }
     },
   }
 }

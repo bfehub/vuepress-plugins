@@ -46,7 +46,7 @@ export const watchPageFiles = (
 
   // watch page files
   const pagesWatcher = chokidar.watch(options.patterns, {
-    cwd: app.dir.source(),
+    // cwd: app.dir.source(),
     ignoreInitial: true,
   })
   pagesWatcher.on('add', async (filePathRelative) => {

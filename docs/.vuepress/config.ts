@@ -1,3 +1,4 @@
+import * as path from 'path'
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@bfehub/vuepress-theme-vmi'
 import { pageMapPlugin } from '@bfehub/vuepress-plugin-page-map'
@@ -47,7 +48,15 @@ export default defineUserConfig({
 
   plugins: [
     // @bfehub/vuepress-plugin-page-map
-    pageMapPlugin(),
+    pageMapPlugin({
+      patterns: [
+        `${path.resolve(process.cwd(), '../packages/components/**/*.md')}`,
+        `!${path.resolve(
+          process.cwd(),
+          '../packages/components/**/node_modules'
+        )}`,
+      ],
+    }),
 
     // @bfehub/vuepress-plugin-page-missing
     pageMissingPlugin(),

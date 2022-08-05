@@ -17,7 +17,7 @@ export const resolvePages = async (
   // resolve page absolute file paths according to the page patterns
   const pageFilePaths = await globby(options.patterns, {
     absolute: true,
-    cwd: app.dir.source(),
+    // cwd: app.dir.source(),
   })
 
   // create pages from files
