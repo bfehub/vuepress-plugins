@@ -1,6 +1,6 @@
 {
   "name": "@bfehub/vuepress-plugin-page-missing",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "VuePress plugin - page-missing",
   "files": [
     "lib"
