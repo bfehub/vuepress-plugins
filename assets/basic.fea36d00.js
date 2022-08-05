@@ -1,0 +1,1 @@
+import{K as a,L as c,a4 as o,T as r}from"./clientConfigs.dd6dee15.js";const s={};function t(n,p){const e=r("VpNpmBadge");return c(),o(e,{package:"@vuepress/core","dist-tag":"next"})}var m=a(s,[["render",t],["__file","basic.vue"]]);export{m as default};
