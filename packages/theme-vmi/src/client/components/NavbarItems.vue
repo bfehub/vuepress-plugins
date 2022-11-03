@@ -3,12 +3,16 @@ import AutoLink from '@theme/AutoLink.vue'
 import NavbarDropdown from '@theme/NavbarDropdown.vue'
 import { useRouteLocale, useSiteLocaleData } from '@vuepress/client'
 import { isLinkHttp, isString } from '@vuepress/shared'
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import type { ComputedRef } from 'vue'
 import { useRouter } from 'vue-router'
-import type { NavbarGroup, NavbarItem, ResolvedNavbarItem } from '../../shared'
-import { useNavLink, useThemeLocaleData } from '../composables'
-import { resolveRepoType } from '../utils'
+import type {
+  NavbarGroup,
+  NavbarItem,
+  ResolvedNavbarItem,
+} from '../../shared/index.js'
+import { useNavLink, useThemeLocaleData } from '../composables/index.js'
+import { resolveRepoType } from '../utils/index.js'
 
 /**
  * Get navbar config of select language dropdown
@@ -27,12 +31,16 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
     }
     const currentPath = router.currentRoute.value.path
     const currentFullPath = router.currentRoute.value.fullPath
+    const currentHash = router.currentRoute.value.hash
 
     const languageDropdown: ResolvedNavbarItem = {
       text: themeLocale.value.selectLanguageText ?? 'unknown language',
-      ariaLabel: themeLocale.value.selectLanguageAriaLabel ?? 'unkown language',
+      ariaLabel:
+        themeLocale.value.selectLanguageAriaLabel ??
+        themeLocale.value.selectLanguageText ??
+        'unknown language',
       children: localePaths.map((targetLocalePath) => {
-        // target locale config of this langauge link
+        // target locale config of this language link
         const targetSiteLocale =
           siteLocale.value.locales?.[targetLocalePath] ?? {}
         const targetThemeLocale =
@@ -57,7 +65,8 @@ const useNavbarSelectLanguage = (): ComputedRef<ResolvedNavbarItem[]> => {
           if (
             router.getRoutes().some((item) => item.path === targetLocalePage)
           ) {
-            link = targetLocalePage
+            // try to keep current hash across languages
+            link = `${targetLocalePage}${currentHash}`
           } else {
             link = targetThemeLocale.home ?? targetLocalePath
           }
@@ -134,6 +143,7 @@ const useNavbarConfig = (): ComputedRef<ResolvedNavbarItem[]> => {
   return computed(() => (themeLocale.value.navbar || []).map(resolveNavbarItem))
 }
 
+const isMobile = ref(false)
 const navbarConfig = useNavbarConfig()
 const navbarSelectLanguage = useNavbarSelectLanguage()
 const navbarRepo = useNavbarRepo()
@@ -142,12 +152,34 @@ const navbarLinks = computed(() => [
   ...navbarSelectLanguage.value,
   ...navbarRepo.value,
 ])
+
+// avoid overlapping of long title and long navbar links
+onMounted(() => {
+  // TODO: migrate to css var
+  // refer to _variables.scss
+  const MOBILE_DESKTOP_BREAKPOINT = 719
+
+  const handleMobile = (): void => {
+    if (window.innerWidth < MOBILE_DESKTOP_BREAKPOINT) {
+      isMobile.value = true
+    } else {
+      isMobile.value = false
+    }
+  }
+  handleMobile()
+  window.addEventListener('resize', handleMobile, false)
+  window.addEventListener('orientationchange', handleMobile, false)
+})
 </script>
 
 <template>
   <nav v-if="navbarLinks.length" class="navbar-items">
     <div v-for="item in navbarLinks" :key="item.text" class="navbar-item">
-      <NavbarDropdown v-if="item.children" :item="item" />
+      <NavbarDropdown
+        v-if="item.children"
+        :item="item"
+        :class="isMobile ? 'mobile' : ''"
+      />
       <AutoLink v-else :item="item" />
     </div>
   </nav>

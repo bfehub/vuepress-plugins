@@ -1,11 +1,13 @@
 import { defineClientConfig } from '@vuepress/client'
 import { h } from 'vue'
-import { Badge, CodeGroup, CodeGroupItem } from './components/global'
+import { Badge, CodeGroup, CodeGroupItem } from './components/global/index.js'
 import {
   setupDarkMode,
   setupSidebarItems,
   useScrollPromise,
-} from './composables'
+} from './composables/index.js'
+import Layout from './layouts/Layout.vue'
+import NotFound from './layouts/NotFound.vue'
 
 import './styles/index.scss'
 
@@ -45,5 +47,10 @@ export default defineClientConfig({
   setup() {
     setupDarkMode()
     setupSidebarItems()
+  },
+
+  layouts: {
+    Layout,
+    NotFound,
   },
 })

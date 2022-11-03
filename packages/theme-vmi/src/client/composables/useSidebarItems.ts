@@ -16,8 +16,9 @@ import type {
   SidebarConfigArray,
   SidebarConfigObject,
   SidebarItem,
-} from '../../shared'
-import { useNavLink, useThemeLocaleData } from '.'
+} from '../../shared/index.js'
+import { useNavLink } from './useNavLink.js'
+import { useThemeLocaleData } from './useThemeData.js'
 
 export type SidebarItemsRef = ComputedRef<ResolvedSidebarItem[]>
 
@@ -88,7 +89,7 @@ export const headerToSidebarItem = (
   sidebarDepth: number
 ): ResolvedSidebarItem => ({
   text: header.title,
-  link: `#${header.slug}`,
+  link: header.link,
   children: headersToSidebarItemChildren(header.children, sidebarDepth),
 })
 

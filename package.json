@@ -1,6 +1,7 @@
 {
   "name": "root",
   "private": true,
+  "type": "module",
   "description": "A theme for vuepress",
   "scripts": {
     "prepare": "husky install",

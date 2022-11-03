@@ -13,9 +13,9 @@ npm i -D @bfehub/vuepress-theme-vmi
 ```
 
 ```js
-const { defaultTheme } = require('@bfehub/vuepress-theme-vmi')
+import { defaultTheme } from '@bfehub/vuepress-theme-vmi'
 
-module.exports = {
+export default {
   theme: defaultTheme({
     // 在这里进行配置
   }),

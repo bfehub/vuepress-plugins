@@ -1,1 +1,1 @@
-export * from './siteData'
+export * from './siteData.js'

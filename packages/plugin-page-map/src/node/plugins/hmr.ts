@@ -1,4 +1,4 @@
-import { handlePageChange as handlePageMapPageChange } from '../dev'
+import { handlePageChange as handlePageMapPageChange } from '../dev/index.js'
 import type { App } from '@vuepress/core'
 import type { Plugin, HmrContext } from 'vite'
 

@@ -8,8 +8,8 @@ import type {
   DefaultThemeNormalPageFrontmatter,
   NavLink,
   ResolvedSidebarItem,
-} from '../../shared'
-import { useNavLink, useSidebarItems } from '../composables'
+} from '../../shared/index.js'
+import { useNavLink, useSidebarItems } from '../composables/index.js'
 
 /**
  * Resolve `prev` or `next` config from frontmatter

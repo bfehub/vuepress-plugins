@@ -2,7 +2,7 @@
 import SidebarItem from '@theme/SidebarItem.vue'
 import { onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { useSidebarItems } from '../composables'
+import { useSidebarItems } from '../composables/index.js'
 
 const route = useRoute()
 const sidebarItems = useSidebarItems()
@@ -50,7 +50,7 @@ onMounted(() => {
   <ul v-if="sidebarItems.length" class="sidebar-items">
     <SidebarItem
       v-for="item in sidebarItems"
-      :key="item.link || item.text"
+      :key="`${item.text}${item.link}`"
       :item="item"
     />
   </ul>

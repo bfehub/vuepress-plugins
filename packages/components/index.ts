@@ -1,1 +1,1 @@
-export * from './npm-badge'
+export * from './npm-badge/index.js'

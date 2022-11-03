@@ -5,7 +5,7 @@ import { pageMapPlugin } from '@bfehub/vuepress-plugin-page-map'
 import { pageMissingPlugin } from '@bfehub/vuepress-plugin-page-missing'
 import { codeBlockPlugin } from '@bfehub/vuepress-plugin-code-block'
 import { searchPlugin } from '@vuepress/plugin-search'
-import { navbar, sidebar } from './configs'
+import { navbar, sidebar } from './configs/index.js'
 
 export default defineUserConfig({
   base: '/vmi/',

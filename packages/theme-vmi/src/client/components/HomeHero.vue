@@ -9,8 +9,8 @@ import {
 import { isArray } from '@vuepress/shared'
 import type { FunctionalComponent } from 'vue'
 import { computed, h } from 'vue'
-import type { DefaultThemeHomePageFrontmatter } from '../../shared'
-import { useDarkMode } from '../composables'
+import type { DefaultThemeHomePageFrontmatter } from '../../shared/index.js'
+import { useDarkMode } from '../composables/index.js'
 
 const frontmatter = usePageFrontmatter<DefaultThemeHomePageFrontmatter>()
 const siteLocale = useSiteLocaleData()
@@ -22,6 +22,10 @@ const heroImage = computed(() => {
   }
   return frontmatter.value.heroImage
 })
+const heroAlt = computed(
+  () => frontmatter.value.heroAlt || heroText.value || 'hero'
+)
+const heroHeight = computed(() => frontmatter.value.heroHeight || 280)
 
 const heroText = computed(() => {
   if (frontmatter.value.heroText === null) {
@@ -29,10 +33,6 @@ const heroText = computed(() => {
   }
   return frontmatter.value.heroText || siteLocale.value.title || 'Hello'
 })
-
-const heroAlt = computed(
-  () => frontmatter.value.heroAlt || heroText.value || 'hero'
-)
 
 const tagline = computed(() => {
   if (frontmatter.value.tagline === null) {
@@ -62,6 +62,7 @@ const HomeHeroImage: FunctionalComponent = () => {
   const img = h('img', {
     src: withBase(heroImage.value),
     alt: heroAlt.value,
+    height: heroHeight.value,
   })
   if (frontmatter.value.heroImageDark === undefined) {
     return img

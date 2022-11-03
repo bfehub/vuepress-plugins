@@ -1,9 +1,9 @@
-import { codeBlockPlugin } from './codeBlockPlugin'
+import { codeBlockPlugin } from './codeBlockPlugin.js'
 
-export * from './codeBlockPlugin'
-export * from './parse'
-export * from './plugins'
-export * from './resolve'
-export * from './utils'
+export * from './codeBlockPlugin.js'
+export * from './parse/index.js'
+export * from './plugins/index.js'
+export * from './resolve/index.js'
+export * from './utils/index.js'
 
 export default codeBlockPlugin

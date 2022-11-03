@@ -1,19 +1,18 @@
 import type { App } from '@vuepress/core'
-import type * as MarkdownIt from 'markdown-it'
-import type { MarkdownEnv } from '@vuepress/markdown'
-import type { CodeBlockPluginOptions } from '..'
-import type { PageCodeDepsHelper } from '../utils'
-import { parseCodeBlock } from '../parse'
+import type { Markdown, MarkdownEnv } from '@vuepress/markdown'
+import type { CodeBlockPluginOptions } from '../index.js'
+import type { PageCodeDepsHelper } from '../utils/index.js'
+import { parseCodeBlock } from '../parse/index.js'
 
 export const resolveHtmlBlock = (
-  md: MarkdownIt,
+  md: Markdown,
   app: App,
   store: PageCodeDepsHelper,
   options: CodeBlockPluginOptions
 ) => {
-  const rawRule = md.renderer.rules.html_block!
+  const rawRule = md.renderer.rules.html_inline!
 
-  md.renderer.rules.html_block = function (
+  md.renderer.rules.html_inline = function (
     tokens,
     idx,
     opts,

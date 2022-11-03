@@ -1,7 +1,7 @@
 import { debug, globby } from '@vuepress/utils'
-import { createPage } from '../utils'
+import { createPage } from '../utils/index.js'
 import type { App, Page } from '@vuepress/core'
-import type { PageMapPluginOptions } from '..'
+import type { PageMapPluginOptions } from '../index.js'
 
 const log = debug('vuepress:page-page/resolve')
 

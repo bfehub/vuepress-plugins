@@ -1,6 +1,6 @@
 import type { Page } from '@vuepress/core'
 import type { PageHeader } from '@vuepress/shared'
-import type { PageCodeDepsHelper } from '../utils'
+import type { PageCodeDepsHelper } from '../utils/index.js'
 import { slugify } from '@mdit-vue/shared'
 
 export const resolvePageHeaders = (
@@ -27,6 +27,7 @@ export const resolvePageHeaders = (
         level: 2,
         title: dep.compAttrs.title,
         slug: slugify(dep.compAttrs.title),
+        link: slugify(dep.compAttrs.title),
         children: [],
       })
     }

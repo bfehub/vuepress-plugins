@@ -1,5 +1,6 @@
 {
   "name": "@bfehub/vuepress-components",
+  "type": "module",
   "version": "1.0.4",
   "description": "VuePress components",
   "keywords": [

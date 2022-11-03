@@ -4,7 +4,7 @@ import {
   preparePagesRoutes,
 } from '@vuepress/core'
 import type { App, Page } from '@vuepress/core'
-import type { PageMapPluginOptions } from '..'
+import type { PageMapPluginOptions } from '../index.js'
 
 /**
  * Event handler for page unlink event

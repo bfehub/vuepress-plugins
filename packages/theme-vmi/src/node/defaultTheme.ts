@@ -10,16 +10,18 @@ import { palettePlugin } from '@vuepress/plugin-palette'
 import { prismjsPlugin } from '@vuepress/plugin-prismjs'
 import { themeDataPlugin } from '@vuepress/plugin-theme-data'
 import { tocPlugin } from '@vuepress/plugin-toc'
-import { fs, path } from '@vuepress/utils'
+import { fs, getDirname, path } from '@vuepress/utils'
 import type {
   DefaultThemeLocaleOptions,
   DefaultThemePageData,
   DefaultThemePluginsOptions,
-} from '../shared'
+} from '../shared/index.js'
 import {
   assignDefaultLocaleOptions,
   resolveContainerPluginOptions,
-} from './utils'
+} from './utils/index.js'
+
+const __dirname = getDirname(import.meta.url)
 
 export interface DefaultThemeOptions extends DefaultThemeLocaleOptions {
   /**
@@ -38,20 +40,20 @@ export const defaultTheme = ({
   return {
     name: '@vuepress/theme-default',
 
-    layouts: path.resolve(__dirname, '../client/layouts'),
-
     templateBuild: path.resolve(__dirname, '../../templates/build.html'),
 
-    // use alias to make all components replaceable
-    alias: Object.fromEntries(
-      fs
-        .readdirSync(path.resolve(__dirname, '../client/components'))
-        .filter((file) => file.endsWith('.vue'))
-        .map((file) => [
-          `@theme/${file}`,
-          path.resolve(__dirname, '../client/components', file),
-        ])
-    ),
+    alias: {
+      // use alias to make all components replaceable
+      ...Object.fromEntries(
+        fs
+          .readdirSync(path.resolve(__dirname, '../client/components'))
+          .filter((file) => file.endsWith('.vue'))
+          .map((file) => [
+            `@theme/${file}`,
+            path.resolve(__dirname, '../client/components', file),
+          ])
+      ),
+    },
 
     clientConfigFile: path.resolve(__dirname, '../client/config.js'),
 

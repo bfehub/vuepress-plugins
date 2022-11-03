@@ -1,6 +1,6 @@
 import type { ThemeData } from '@vuepress/plugin-theme-data'
 import type { LocaleData } from '@vuepress/shared'
-import type { NavbarConfig, SidebarConfig } from './nav'
+import type { NavbarConfig, SidebarConfig } from './nav.js'
 
 export interface DefaultThemePluginsOptions {
   /**
@@ -62,6 +62,20 @@ export type DefaultThemeData = ThemeData<DefaultThemeLocaleData>
 
 export interface DefaultThemeLocaleData extends LocaleData {
   /**
+   * Default color mode
+   *
+   * @default 'auto'
+   */
+  colorMode?: 'auto' | 'dark' | 'light'
+
+  /**
+   * Enable color mode switching and display a button in navbar or not
+   *
+   * @default true
+   */
+  colorModeSwitch?: boolean
+
+  /**
    * Home path of current locale
    *
    * Used as the link of back-to-home and navbar logo
@@ -88,13 +102,6 @@ export interface DefaultThemeLocaleData extends LocaleData {
    * Logo to display in navbar in dark mode
    */
   logoDark?: null | string
-
-  /**
-   * Navbar dark mode button config
-   *
-   * Enable dark mode switching and display a button in navbar or not
-   */
-  darkMode?: boolean
 
   /**
    * Navbar repository config
@@ -149,9 +156,9 @@ export interface DefaultThemeLocaleData extends LocaleData {
    * - ...
    *
    * The max value depends on which headers you have extracted
-   * via `markdown.extractHeaders.level`.
+   * via `markdown.headers.level`.
    *
-   * The default value of `markdown.extractHeaders.level` is `[2, 3]`,
+   * The default value of `markdown.headers.level` is `[2, 3]`,
    * so the default max value of `sidebarDepth` is `2`
    */
   sidebarDepth?: number
@@ -271,9 +278,9 @@ export interface DefaultThemeLocaleData extends LocaleData {
   openInNewWindow?: string
 
   /**
-   * A11y text for dark mode toggle button
+   * A11y text for color mode toggle button
    */
-  toggleDarkMode?: string
+  toggleColorMode?: string
 
   /**
    * A11y text for sidebar toggle button

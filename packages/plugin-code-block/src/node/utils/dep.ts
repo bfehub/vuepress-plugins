@@ -1,4 +1,4 @@
-import type { CodeNodeConfig } from '../../shared'
+import type { CodeNodeConfig } from '../../shared/index.js'
 
 export interface PageCodeDep {
   /**

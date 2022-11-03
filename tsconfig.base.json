@@ -2,7 +2,8 @@
   "compilerOptions": {
     "composite": true,
     "lib": ["DOM", "ES2020"],
-    "moduleResolution": "Node",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
     "noEmitOnError": true,
     "noImplicitAny": false,
     "skipLibCheck": true,

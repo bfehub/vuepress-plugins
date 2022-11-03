@@ -1,3 +1,3 @@
-export * from './nav'
-export * from './options'
-export * from './page'
+export * from './nav.js'
+export * from './options.js'
+export * from './page.js'

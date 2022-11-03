@@ -1,5 +1,5 @@
 import type { App } from '@vuepress/core'
-import type { PageCodeDep, PageCodeDepsHelper } from '../utils'
+import type { PageCodeDep, PageCodeDepsHelper } from '../utils/index.js'
 
 /**
  * Generate component path to components map temp file

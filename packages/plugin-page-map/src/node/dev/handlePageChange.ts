@@ -6,8 +6,8 @@ import {
   preparePagesRoutes,
 } from '@vuepress/core'
 import type { App, Page } from '@vuepress/core'
-import { createPage } from '../utils'
-import type { PageMapPluginOptions } from '..'
+import { createPage } from '../utils/index.js'
+import type { PageMapPluginOptions } from '../index.js'
 
 /**
  * Event handler for page change event

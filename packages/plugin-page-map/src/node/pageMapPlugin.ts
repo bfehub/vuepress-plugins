@@ -1,7 +1,7 @@
 import type { Plugin } from '@vuepress/core'
-import { resolveOptions, resolvePages } from './resolve'
-import { watchPageFiles } from './dev'
-import { vitePageHMR } from './plugins'
+import { resolveOptions, resolvePages } from './resolve/index.js'
+import { watchPageFiles } from './dev/index.js'
+import { vitePageHMR } from './plugins/index.js'
 
 /**
  * Options of @bfehub/vuepress-plugin-page-map

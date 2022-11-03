@@ -3,8 +3,8 @@ import { clientIframeConfigs } from '@internal/clientIframeConfigs'
 import { createApp, h } from 'vue'
 import { RouterView } from 'vue-router'
 import type { CreateVueAppFunction } from '@vuepress/client'
-import { siteData } from './composables'
-import { createVueRouter } from './router'
+import { siteData } from './composables/index.js'
+import { createVueRouter } from './router.js'
 
 export const createVueApp: CreateVueAppFunction = async () => {
   // create vue app

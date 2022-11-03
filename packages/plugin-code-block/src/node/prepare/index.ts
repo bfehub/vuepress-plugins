@@ -1,2 +1,2 @@
-export * from './prepareClientIframe'
-export * from './prepareVmiComponents'
+export * from './prepareClientIframe.js'
+export * from './prepareVmiComponents.js'
