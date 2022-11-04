@@ -1,5 +1,11 @@
 # @bfehub/vuepress-theme-vmi
 
+## 1.1.0
+
+### Minor Changes
+
+- 68e593d: Update VuePress 2.0.0-beta.53
+
 ## 1.0.4
 
 ### Patch Changes
