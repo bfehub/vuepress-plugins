@@ -1,0 +1,1 @@
+import{K as c,O as o,L as a,$ as s}from"./chunk-X6HE2CCA.21a3c316.js";const t={};function n(r,p){const e=o("VpNpmBadge");return a(),s(e,{package:"@vuepress/core","dist-tag":"next"})}const m=c(t,[["render",n],["__file","basic.vue"]]);export{m as default};
