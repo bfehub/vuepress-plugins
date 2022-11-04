@@ -19,6 +19,7 @@
     "docs:build": "pnpm --filter=docs docs:build",
     "docs:serve": "pnpm --filter=docs docs:serve",
     "docs:release": "pnpm build && pnpm docs:build",
+    "version-packages": "changeset version",
     "release": "pnpm build && changeset publish"
   },
   "devDependencies": {
