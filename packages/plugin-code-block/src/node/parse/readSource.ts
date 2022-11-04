@@ -1,6 +1,6 @@
 import { fs, path, warn } from '@vuepress/utils'
-import { highlight, scanImports, resolve } from '../utils'
-import type { CodeSource } from '../../shared'
+import { highlight, scanImports, resolve } from '../utils/index.js'
+import type { CodeSource } from '../../shared/index.js'
 
 export const readSource = (
   filePath: string,

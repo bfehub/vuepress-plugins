@@ -1,6 +1,6 @@
 import type { Node } from 'posthtml-parser'
-import type { PageCodeDep } from '../utils'
-import { readSource } from './readSource'
+import type { PageCodeDep } from '../utils/index.js'
+import { readSource } from './readSource.js'
 
 export const parseRaw = (node: Node, dep: PageCodeDep): Node => {
   if (typeof node !== 'object') {

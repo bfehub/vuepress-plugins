@@ -1,5 +1,5 @@
-import type { CodeBlockPluginOptions } from '..'
-import type { CodeLocaleConfig } from '../../shared'
+import type { CodeBlockPluginOptions } from '../index.js'
+import type { CodeLocaleConfig } from '../../shared/index.js'
 
 export const DEFAULT_LOCALE_OPTIONS: CodeLocaleConfig = {
   '/': {

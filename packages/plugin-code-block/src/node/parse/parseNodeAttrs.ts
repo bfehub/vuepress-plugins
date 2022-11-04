@@ -1,4 +1,4 @@
-import { CodeUserConfig } from '../../shared'
+import { CodeUserConfig } from '../../shared/index.js'
 
 export const parseNodeAttrs = (
   config: CodeUserConfig,

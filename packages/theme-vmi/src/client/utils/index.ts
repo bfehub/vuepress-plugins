@@ -1,3 +1,3 @@
-export * from './isActiveSidebarItem'
-export * from './resolveEditLink'
-export * from './resolveRepoType'
+export * from './isActiveSidebarItem.js'
+export * from './resolveEditLink.js'
+export * from './resolveRepoType.js'

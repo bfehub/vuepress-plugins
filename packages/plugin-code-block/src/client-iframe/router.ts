@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, Router } from 'vue-router'
 import { removeEndingSlash } from '@vuepress/shared'
-import { Vuepress } from './components'
-import { siteData } from './composables'
+import { Vuepress } from './components/index.js'
+import { siteData } from './composables/index.js'
 
 /**
  * Create vue-router instance

@@ -1,5 +1,5 @@
 import type { Plugin } from '@vuepress/core'
-import { resolvePageMissing } from './resolve'
+import { resolvePageMissing } from './resolve/index.js'
 
 export const pageMissingPlugin = (): Plugin => {
   return {

@@ -1,15 +1,17 @@
-import { path } from '@vuepress/utils'
+import { path, getDirname } from '@vuepress/utils'
 import type { Plugin } from '@vuepress/core'
-import type { CodeUserConfig, CodeLocaleConfig } from '../shared'
-import { createPageCodeDepsHelper } from './utils'
-import { prepareClientIframe, prepareVmiComponents } from './prepare'
-import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins'
+import type { CodeUserConfig, CodeLocaleConfig } from '../shared/index.js'
+import { createPageCodeDepsHelper } from './utils/index.js'
+import { prepareClientIframe, prepareVmiComponents } from './prepare/index.js'
+import { vitePageHMR, vitePageProxy, vitePageIframe } from './plugins/index.js'
 import {
   resolveOptions,
   resolveHtmlBlock,
   resolveScriptSetup,
   resolvePageHeaders,
-} from './resolve'
+} from './resolve/index.js'
+
+const __dirname = getDirname(import.meta.url)
 
 /**
  * Options of @bfehub/vuepress-plugin-code-block

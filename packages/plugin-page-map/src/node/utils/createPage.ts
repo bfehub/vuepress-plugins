@@ -1,7 +1,7 @@
 import { createPage as _createPage, inferPagePath } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import type { App, Page } from '@vuepress/core'
-import { PageMapPluginOptions } from '..'
+import { PageMapPluginOptions } from '../index.js'
 
 export const createPage = async (
   app: App,

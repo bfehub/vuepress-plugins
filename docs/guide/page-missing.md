@@ -13,10 +13,12 @@ npm i -D @bfehub/vuepress-plugin-page-missing
 ```
 
 ```js
-const { pageMissingPlugin } = require('@bfehub/vuepress-plugin-page-missing')
+import { pageMissingPlugin } from '@bfehub/vuepress-plugin-page-missing'
 
-module.exports = {
-  plugins: [pageMissingPlugin()],
+export default {
+  plugins: [
+    pageMissingPlugin(),
+  ],
 }
 ```
 

@@ -7,7 +7,7 @@ import {
 } from '@vuepress/client'
 import { computed, h } from 'vue'
 import type { FunctionalComponent } from 'vue'
-import { useDarkMode, useThemeLocaleData } from '../composables'
+import { useDarkMode, useThemeLocaleData } from '../composables/index.js'
 
 const routeLocale = useRouteLocale()
 const siteLocale = useSiteLocaleData()

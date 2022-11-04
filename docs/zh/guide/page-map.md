@@ -9,10 +9,12 @@ npm i -D @bfehub/vuepress-plugin-page-map
 ```
 
 ```js
-const { pageMapPlugin } = require('@bfehub/vuepress-plugin-page-map')
+import { pageMapPlugin } from '@bfehub/vuepress-plugin-page-map'
 
-module.exports = {
-  plugins: [pageMapPlugin()],
+export default {
+  plugins: [
+    pageMapPlugin(),
+  ],
 }
 ```
 

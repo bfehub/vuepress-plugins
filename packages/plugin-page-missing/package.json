@@ -1,5 +1,6 @@
 {
   "name": "@bfehub/vuepress-plugin-page-missing",
+  "type": "module",
   "version": "1.0.4",
   "description": "VuePress plugin - page-missing",
   "files": [
@@ -21,8 +22,8 @@
     "clean": "rimraf lib *.tsbuildinfo"
   },
   "dependencies": {
-    "@vuepress/core": "^2.0.0-beta.49",
-    "@vuepress/utils": "^2.0.0-beta.49"
+    "@vuepress/core": "2.0.0-beta.53",
+    "@vuepress/utils": "2.0.0-beta.53"
   },
   "publishConfig": {
     "access": "public"

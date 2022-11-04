@@ -1,4 +1,4 @@
-import type { PageMapPluginOptions } from '..'
+import type { PageMapPluginOptions } from '../index.js'
 
 /**
  * Create options with default values

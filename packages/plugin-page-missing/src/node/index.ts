@@ -1,6 +1,6 @@
-import { pageMissingPlugin } from './pageMissingPlugin'
+import { pageMissingPlugin } from './pageMissingPlugin.js'
 
-export * from './pageMissingPlugin'
-export * from './resolve'
+export * from './pageMissingPlugin.js'
+export * from './resolve/index.js'
 
 export default pageMissingPlugin

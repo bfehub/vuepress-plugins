@@ -1,1 +1,1 @@
-export * from './resolvePageMissing'
+export * from './resolvePageMissing.js'

@@ -1,9 +1,9 @@
 import type { App } from '@vuepress/core'
 import type { Node } from 'posthtml-parser'
-import type { PageCodeDep } from '../utils'
+import type { PageCodeDep } from '../utils/index.js'
 import { slugify } from '@mdit-vue/shared'
-import { readSource } from './readSource'
-import { markdownText } from '../utils/highlight'
+import { readSource } from './readSource.js'
+import { markdownText } from '../utils/highlight.js'
 
 export const parseVue = (app: App, node: Node, dep: PageCodeDep): Node => {
   if (typeof node !== 'object') {

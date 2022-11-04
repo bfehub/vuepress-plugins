@@ -1,2 +1,2 @@
-export * from './resolveOptions'
-export * from './resolvePages'
+export * from './resolveOptions.js'
+export * from './resolvePages.js'

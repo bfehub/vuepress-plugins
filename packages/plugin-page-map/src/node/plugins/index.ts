@@ -1,1 +1,1 @@
-export * from './hmr'
+export * from './hmr.js'

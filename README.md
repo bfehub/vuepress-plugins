@@ -2,6 +2,8 @@
 
 [文档及演示](https://bfehub.github.io/vmi/zh/guide/)
 
+**当前依赖 VuePress v2.0.0-beta.53 版本**
+
 Vmi 是一个用于组件开发场景的 VuePress 的插件集合。尽量通过插件能有相似 Dumi 的 Demo 体验，又能保持 VuePress 强大的文档编写能力。
 
 ## 特性

@@ -13,10 +13,12 @@ npm i -D @bfehub/vuepress-plugin-code-block
 ```
 
 ```js
-const { codeBlockPlugin } = require('@bfehub/vuepress-plugin-code-block')
+import { codeBlockPlugin } from '@bfehub/vuepress-plugin-code-block'
 
-module.exports = {
-  plugins: [codeBlockPlugin()],
+export default {
+  plugins: [
+    codeBlockPlugin(),
+  ],
 }
 ```
 

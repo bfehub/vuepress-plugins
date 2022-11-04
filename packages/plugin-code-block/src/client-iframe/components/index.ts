@@ -1,1 +1,1 @@
-export * from './Vuepress'
+export * from './Vuepress.js'

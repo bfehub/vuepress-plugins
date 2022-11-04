@@ -1,9 +1,9 @@
-import { pageMapPlugin } from './pageMapPlugin'
+import { pageMapPlugin } from './pageMapPlugin.js'
 
-export * from './pageMapPlugin'
-export * from './resolve'
-export * from './plugins'
-export * from './utils'
-export * from './dev'
+export * from './pageMapPlugin.js'
+export * from './resolve/index.js'
+export * from './plugins/index.js'
+export * from './utils/index.js'
+export * from './dev/index.js'
 
 export default pageMapPlugin
