@@ -1,0 +1,1 @@
+import{_ as e,B as t,C as o}from"./framework-cb0d5945.js";const n={},s={style:{position:"fixed",top:0,left:0}};function c(r,_){return t(),o("button",s,"我不会飞出去")}const f=e(n,[["render",c],["__file","demo-transform.vue"]]);export{f as default};

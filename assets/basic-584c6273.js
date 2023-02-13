@@ -1,0 +1,1 @@
+import{_ as a,V as c,B as o,a0 as s}from"./framework-cb0d5945.js";const t={};function n(r,_){const e=c("VpNpmBadge");return o(),s(e,{package:"@vuepress/core","dist-tag":"next"})}const m=a(t,[["render",n],["__file","basic.vue"]]);export{m as default};
