@@ -5,7 +5,7 @@
 ## 使用
 
 ```sh
-npm i -D @bfehub/vuepress-components
+npm i -D @bfehub/vuepress-components@1.60.x
 ```
 
 ```ts

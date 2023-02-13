@@ -5,7 +5,7 @@ A component used to write documentation.
 ## Using
 
 ```sh
-npm i -D @bfehub/vuepress-components
+npm i -D @bfehub/vuepress-components@1.60.x
 ```
 
 ```ts

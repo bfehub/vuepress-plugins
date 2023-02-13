@@ -1,7 +1,7 @@
 {
   "name": "@bfehub/vuepress-plugin-code-block",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.60.0",
   "description": "VuePress plugin - code-block",
   "files": [
     "lib"
@@ -25,18 +25,18 @@
   "dependencies": {
     "@mdit-vue/shared": "^0.7.0",
     "@types/markdown-it": "^12.2.3",
-    "@vuepress/cli": "2.0.0-beta.53",
-    "@vuepress/client": "2.0.0-beta.53",
-    "@vuepress/core": "2.0.0-beta.53",
-    "@vuepress/markdown": "2.0.0-beta.53",
-    "@vuepress/plugin-prismjs": "2.0.0-beta.53",
-    "@vuepress/shared": "2.0.0-beta.53",
-    "@vuepress/utils": "2.0.0-beta.53",
+    "@vuepress/cli": "2.0.0-beta.60",
+    "@vuepress/client": "2.0.0-beta.60",
+    "@vuepress/core": "2.0.0-beta.60",
+    "@vuepress/markdown": "2.0.0-beta.60",
+    "@vuepress/plugin-prismjs": "2.0.0-beta.60",
+    "@vuepress/shared": "2.0.0-beta.60",
+    "@vuepress/utils": "2.0.0-beta.60",
     "@vueuse/core": "^8.2.1",
     "markdown-it": "^13.0.1",
     "posthtml-parser": "^0.11.0",
     "posthtml-render": "^3.0.0",
-    "vue": "^3.2.33",
+    "vue": "^3.2.47",
     "vue-router": "^4.0.15"
   },
   "publishConfig": {

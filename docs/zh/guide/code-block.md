@@ -9,7 +9,7 @@ headers: false
 ## 安装
 
 ```sh
-npm i -D @bfehub/vuepress-plugin-code-block
+npm i -D @bfehub/vuepress-plugin-code-block@1.60.x
 ```
 
 ```js

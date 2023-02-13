@@ -9,7 +9,7 @@
 ## 安装
 
 ```sh
-npm i -D @bfehub/vuepress-plugin-page-missing
+npm i -D @bfehub/vuepress-plugin-page-missing@1.60.x
 ```
 
 ```js

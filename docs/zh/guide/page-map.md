@@ -5,7 +5,7 @@
 ## 安装
 
 ```sh
-npm i -D @bfehub/vuepress-plugin-page-map
+npm i -D @bfehub/vuepress-plugin-page-map@1.60.x
 ```
 
 ```js

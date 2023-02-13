@@ -9,7 +9,7 @@
 ## 安装
 
 ```sh
-npm i -D @bfehub/vuepress-theme-vmi
+npm i -D @bfehub/vuepress-theme-vmi@1.60.x
 ```
 
 ```js

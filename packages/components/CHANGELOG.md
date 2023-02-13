@@ -1,5 +1,11 @@
 # @bfehub/vuepress-components
 
+## 1.60.0
+
+### Minor Changes
+
+- Update VuePress 2.0.0-beta.60
+
 ## 1.1.0
 
 ### Minor Changes
