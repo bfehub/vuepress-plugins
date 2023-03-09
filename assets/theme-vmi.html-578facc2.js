@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-e7c0b8b4","path":"/zh/guide/theme-vmi.html","title":"主题参考","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"安装","slug":"安装","link":"#安装","children":[]}],"git":{"updatedTime":1676268652000,"contributors":[{"name":"haiweilian","email":"haiweilian@foxmail.com","commits":1}]},"filePathRelative":"zh/guide/theme-vmi.md"}');export{e as data};
