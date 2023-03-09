@@ -6,6 +6,8 @@ export const vitePageIframe = (app: App): Plugin => {
   return {
     name: '@bfehub/vuepress-plugin-code-block:iframe',
     async config(config) {
+      if (config.build.ssr) return
+
       const input = config.build.rollupOptions.input
       const inputs: string[] = []
 
@@ -38,6 +40,15 @@ import '@bfehub/vuepress-plugin-code-block/lib/client-iframe/app'
 </body>`
           )
       )
+    },
+    generateBundle(_, bundle) {
+      // Make sure app chunk is first
+      Object.entries(bundle).forEach(([key, val]) => {
+        if (val.type === 'chunk' && val.name !== 'app' && val.isEntry) {
+          delete bundle[key]
+          bundle[key] = val
+        }
+      })
     },
   }
 }
