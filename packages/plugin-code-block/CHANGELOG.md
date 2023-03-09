@@ -1,5 +1,11 @@
 # @bfehub/vuepress-plugin-code-block
 
+## 1.60.1
+
+### Patch Changes
+
+- 0c0d3b7: fix: entry find error when render
+
 ## 1.60.0
 
 ### Minor Changes
