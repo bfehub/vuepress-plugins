@@ -62,7 +62,11 @@ export default defineUserConfig({
     pageMissingPlugin(),
 
     // @bfehub/vuepress-plugin-code-block
-    codeBlockPlugin(),
+    codeBlockPlugin({
+      config: {
+        baseDemoUrl: 'https://v2.vuepress.vuejs.org',
+      },
+    }),
 
     // @vuepress/plugin-search
     searchPlugin(),

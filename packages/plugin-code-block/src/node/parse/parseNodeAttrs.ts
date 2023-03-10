@@ -13,6 +13,12 @@ export const parseNodeAttrs = (
   })
 
   Object.keys(attrs).forEach((key) => {
+    if (key.startsWith('demoUrl')) {
+      if (!attrs[key].startsWith('http') && config.baseDemoUrl) {
+        attrs[key] = config.baseDemoUrl + attrs[key]
+      }
+    }
+
     if (attrs[key] === 'true') {
       attrs[key] = ''
     }

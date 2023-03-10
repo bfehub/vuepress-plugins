@@ -75,6 +75,11 @@ export interface CodeUserConfig {
    * @default 'vertical'
    */
   direction?: 'vertical' | 'horizontal'
+
+  /**
+   * 用于设置 demo 的基础路径，用于给 demoUrl 添加统一的前缀
+   */
+  baseDemoUrl?: string
 }
 ```
 
@@ -230,6 +235,35 @@ export interface CodeUserConfig {
 渲染效果如下
 
 <demo src="./demos/demo-basic.vue" direction="horizontal" defaultShowCode></demo>
+
+### baseDemoUrl
+
+当需要设置统一的 `demoUrl` 前缀时，可以通过指定 `baseDemoUrl` 来实现。
+
+```js
+plugins: [
+  codeBlockPlugin({
+    config: {
+      baseDemoUrl: 'https://v2.vuepress.vuejs.org',
+    }
+  }),
+],
+```
+
+对于不是完整 URL 的 `demoUrl`，会自动拼接 `baseDemoUrl`，例如
+
+```html
+<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="/zh/"></demo>
+```
+
+实际会解析成
+
+```html
+<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
+```
+
+展示效果如下
+<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="/zh/"></demo>
 
 ## 其他特性
 
