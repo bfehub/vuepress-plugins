@@ -60,6 +60,11 @@ export interface CodeUserConfig {
    * @default 'vertical'
    */
   direction?: 'vertical' | 'horizontal'
+  /**
+   * 用于设置 demoUrl 的基础 url
+   * @default ''
+   */
+  baseDemoUrl?: string
 }
 
 export interface CodeNodeConfig extends CodeUserConfig {
