@@ -1,5 +1,11 @@
 # @bfehub/vuepress-plugin-code-block
 
+## 1.60.2
+
+### Patch Changes
+
+- 9b3971f: support baseDemoUrl in global config
+
 ## 1.60.1
 
 ### Patch Changes

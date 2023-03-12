@@ -1,7 +1,7 @@
 {
   "name": "@bfehub/vuepress-plugin-code-block",
   "type": "module",
-  "version": "1.60.1",
+  "version": "1.60.2",
   "description": "VuePress plugin - code-block",
   "files": [
     "lib"
