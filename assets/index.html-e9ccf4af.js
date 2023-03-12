@@ -1,1 +1,0 @@
-const t=JSON.parse('{"key":"v-1020f180","path":"/components/","title":"Introduction","lang":"en-US","frontmatter":{},"headers":[{"level":2,"title":"Using","slug":"using","link":"#using","children":[]}],"git":{"updatedTime":1678501670000,"contributors":[{"name":"Hawtim","email":"vastfield@163.com","commits":1}]},"filePathRelative":"components/README.md"}');export{t as data};
