@@ -178,12 +178,12 @@ export interface CodeUserConfig {
 用于指定该 `demo` 的访问链接，通常在默认渲染的 `demo` 无法满足展示需要时使用。
 
 ```html
-<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
+<demo src="./demos/demo-iframe-url.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
 ```
 
 渲染效果如下
 
-<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
+<demo src="./demos/demo-iframe-url.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
 
 ### transform
 
@@ -253,17 +253,18 @@ plugins: [
 对于不是完整 URL 的 `demoUrl`，会自动拼接 `baseDemoUrl`，例如
 
 ```html
-<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="/zh/"></demo>
+<demo src="./demos/demo-iframe-url.vue" iframe="200" demoUrl="/zh/"></demo>
 ```
 
 实际会解析成
 
 ```html
-<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
+<demo src="./demos/demo-iframe-url.vue" iframe="200" demoUrl="https://v2.vuepress.vuejs.org/zh/"></demo>
 ```
 
 展示效果如下
-<demo src="./demos/demo-iframe.vue" iframe="200" demoUrl="/zh/"></demo>
+
+<demo src="./demos/demo-iframe-url.vue" iframe="200" demoUrl="/zh/"></demo>
 
 ## 其他特性
 

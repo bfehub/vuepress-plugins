@@ -1,6 +1,9 @@
 module.exports = {
   root: true,
   extends: '@bfehub/eslint-config-vue',
+  rules: {
+    '@typescript-eslint/ban-ts-comment': 'off',
+  },
   globals: {
     __VUEPRESS_VERSION__: 'readonly',
     __VUEPRESS_DEV__: 'readonly',
