@@ -1,5 +1,12 @@
 # @bfehub/vuepress-plugin-code-block
 
+## 1.60.3
+
+### Patch Changes
+
+- f89fca9: fix: components should not be rendered when demoUrl config
+- f89fca9: fix: adding a cache to make the HMR correct
+
 ## 1.60.2
 
 ### Patch Changes
