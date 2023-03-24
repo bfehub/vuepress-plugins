@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-1f687c9e","path":"/zh/components/","title":"介绍","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"使用","slug":"使用","link":"#使用","children":[]}],"git":{"updatedTime":1679639764000,"contributors":[{"name":"haiweilian","email":"haiweilian@foxmail.com","commits":1}]},"filePathRelative":"zh/components/README.md"}');export{e as data};
