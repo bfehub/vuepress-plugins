@@ -1,5 +1,6 @@
 import type { App } from '@vuepress/core'
 import type { PageCodeDep, PageCodeDepsHelper } from '../utils/index.js'
+import { setCache, isCacheChange } from '../utils/index.js'
 
 /**
  * Generate component path to components map temp file
@@ -31,5 +32,9 @@ ${[...map.values()]
 }
 `
 
-  await app.writeTemp('internal/pagesVmiComponents.js', content)
+  const writeTempPath = 'internal/pagesVmiComponents.js'
+  if (isCacheChange(writeTempPath, content)) {
+    setCache(writeTempPath, content)
+    await app.writeTemp(writeTempPath, content)
+  }
 }
